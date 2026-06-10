@@ -69,8 +69,8 @@ h1{font-family:var(--sans);font-size:clamp(2.4rem,7vw,5rem);font-weight:700;line
 .hero-role{font-family:var(--mono);font-size:clamp(.85rem,2vw,1.2rem);color:var(--cyan);margin-bottom:.8rem;min-height:1.8rem;}
 .blink{display:inline-block;width:2px;height:.9em;background:var(--cyan);vertical-align:middle;animation:blink 1s step-end infinite;}
 @keyframes blink{50%{opacity:0;}}
-.hero-quote{font-family:var(--mono);font-size:.8rem;color:var(--muted);border-left:2px solid var(--green);padding-left:1rem;margin-bottom:1.5rem;font-style:italic;line-height:1.6;}
-.hero-desc{font-size:1.05rem;font-weight:300;color:var(--text);line-height:1.75;margin-bottom:2rem;max-width:580px;}
+.hero-quote{font-family:var(--mono);font-size:.8rem;color:var(--muted);border-left:2px solid var(--green);padding-left:1rem;margin-bottom:1.2rem;font-style:italic;line-height:1.7;}
+.hero-desc{font-size:1.05rem;font-weight:300;color:var(--text);line-height:1.75;margin-bottom:2rem;max-width:600px;}
 .hero-badges{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:2rem;}
 .badge{font-family:var(--mono);font-size:.65rem;padding:.25rem .7rem;border:1px solid var(--border);color:var(--muted);letter-spacing:.08em;transition:all .2s;}
 .badge:hover,.badge.hi{border-color:var(--green);color:var(--green);background:rgba(0,255,136,.05);}
@@ -281,8 +281,8 @@ footer span{color:var(--green);}
     <h1>Kelly Barco</h1>
     <div class="hero-role" id="typedRole"><span class="blink"></span></div>
     <div class="hero-location">📍 <span>Bizkaia, España</span> · Presencial o Remoto</div>
-    <blockquote class="hero-quote">"Me formé en administración de sistemas, redes y ciberseguridad. Para mi Proyecto de Fin de Grado, implementé desde cero un laboratorio de Sistema de Detección, Monitorización y Prevención de Intrusos, superando el reto de conectar estas tecnologías en un entorno seguro."</blockquote>
-<p class="hero-desc">Busco mi primer rol en IT, empezando por sistemas o redes, con la idea clara de crecer hacia el Blue Team. En este porfolio recojo mis laboratorios y proyectos actuales; un espacio que estará en constante crecimiento.</p>
+    <blockquote class="hero-quote">"Me formé en administración de sistemas, redes y ciberseguridad. Para mi Proyecto de Fin de Grado, implementé desde cero un laboratorio completo de detección, monitorización y prevención de intrusos — conectando Suricata, Wazuh y automatización en Python sobre infraestructura virtualizada."</blockquote>
+    <p class="hero-desc">Busco mi primer rol en IT, empezando por sistemas, soporte o infraestructura, con la idea clara de crecer hacia el Blue Team. En este portfolio recojo los laboratorios que sigo construyendo; un espacio en constante crecimiento.</p>
     <div class="hero-badges">
       <span class="badge hi">Ciberseguridad Defensiva</span>
       <span class="badge">Linux · Windows Server</span>
@@ -310,9 +310,9 @@ footer span{color:var(--green);}
     </div>
     <div class="sobre-grid">
       <div class="sobre-text fade-in">
-        <p>Mi relación con la informática nació de la <strong>curiosidad autodidacta</strong> de entender cómo funcionan los sistemas. Decidí consolidar esa vocación titulándome como <strong>Técnica Superior en Administración de Sistemas Informáticos en Red (ASIR)</strong> con perfil en ciberseguridad, complementado con la certificación de <strong>Soporte de TI de Google.</strong></p>
-        <p>Durante la formación trabajé con <strong>Linux y Windows Server, virtualización, administración de redes, monitorización y análisis de tráfico.</strong> Como proyecto final diseñé e implementé un laboratorio completo de detección y respuesta ante incidentes con Suricata, Wazuh y automatización en Python.</p>
-        <p>Aporto una <strong>transición profesional real y demostrada:</strong> compaginé trabajo y formación ASIR durante años. Esa etapa me dotó de planificación autónoma, gestión de plazos y una disciplina directamente trasladable a la gestión de sistemas críticos.</p>
+        <p>Mi relación con la informática nació de la <strong>curiosidad de entender cómo funcionan los sistemas por dentro.</strong> Decidí consolidar esa vocación titulándome como <strong>Técnica Superior en ASIR con perfil en ciberseguridad,</strong> completado con la certificación de <strong>Soporte de TI de Google.</strong></p>
+        <p>Durante la formación trabajé con <strong>Linux y Windows Server, virtualización, administración de redes, monitorización y análisis de tráfico.</strong> En las prácticas en Normicro migré un servidor Pandora FMS en producción sin pérdida de datos, desplegué PRTG con SNMP y NetFlow, y redacté guías técnicas para el equipo.</p>
+        <p>Llevo más de diez años <strong>compaginando trabajo y formación,</strong> lo que me ha dado planificación autónoma, gestión de plazos y responsabilidad sin supervisión directa — habilidades que traslado directamente a la gestión de sistemas.</p>
       </div>
       <div class="fade-in">
         <div class="info-grid">
@@ -358,7 +358,7 @@ footer span{color:var(--green);}
         <div class="lab-body">
           <div class="lab-status">// LAB 01 · COMPLETADO · TFG ASIR</div>
           <div class="lab-title">Sistema de Detección, Monitorización y Prevención de Intrusos</div>
-          <div class="lab-desc">Infraestructura defensiva completa desplegada en VirtualBox con 4 máquinas. Honeypot Chameleon como señuelo, IDS Suricata vigilando el tráfico, SIEM Wazuh centralizando alertas y bloqueo automático de IPs con Python + Bash + iptables. 100% open source, coste: 0€.</div>
+          <div class="lab-desc">Cuatro máquinas virtuales interconectadas forman una infraestructura defensiva completa: honeypot Chameleon como señuelo, Suricata detectando anomalías y ataques, Wazuh centralizando alertas, y automatización Python + iptables bloqueando IPs en tiempo real. Validado con Kali Linux, Metasploit e Hydra.</div>
           <div class="lab-tags">
             <span class="lab-tag">Honeypot Chameleon</span>
             <span class="lab-tag">Suricata IDS/IPS</span>
@@ -449,7 +449,7 @@ footer span{color:var(--green);}
       </div>
     </div>
     <div class="modal-body">
-      <p class="modal-desc">Infraestructura defensiva completa desplegada en VirtualBox con 4 máquinas virtuales interconectadas. El honeypot Chameleon actúa como señuelo, Suricata inspecciona el tráfico en tiempo real, Wazuh centraliza y correlaciona las alertas, y un script Python + Bash reacciona bloqueando automáticamente las IPs atacantes mediante iptables. Todo el proceso fue validado simulando ataques reales con Kali Linux, Metasploit e Hydra, mapeando los TTPs al framework MITRE ATT&CK. Coste de infraestructura: 0€.</p>
+      <p class="modal-desc">Diseñé e implementé este laboratorio como Proyecto Final de Grado. Cuatro máquinas virtuales interconectadas forman una infraestructura defensiva completa: el honeypot Chameleon actúa como señuelo sobre servicios simulados, Suricata detecta escaneos, intentos de fuerza bruta y anomalías con reglas ajustadas durante las pruebas, y Wazuh centraliza y correlaciona todos los eventos de seguridad. Un script Python automatiza la respuesta bloqueando IPs via iptables, reduciendo la intervención manual. Todo el proceso fue validado con ataques reales usando Kali Linux, Metasploit e Hydra, mapeando los TTPs al framework MITRE ATT&CK. La arquitectura, configuraciones y procedimientos están documentados paso a paso para que sea reproducible desde cero.</p>
       <div class="modal-tags">
         <span class="lab-tag">Honeypot Chameleon</span>
         <span class="lab-tag">Suricata IDS/IPS</span>
@@ -462,6 +462,7 @@ footer span{color:var(--green);}
         <span class="lab-tag">Metasploit</span>
         <span class="lab-tag">Hydra</span>
         <span class="lab-tag">MITRE ATT&amp;CK</span>
+        <span class="lab-tag">VirtualBox</span>
       </div>
       <div class="modal-links">
         <a href="https://github.com/kellybarco/Proyecto-Final-ASIR-Deteccion-Intrusos" class="lab-link" target="_blank">GitHub ↗</a>
@@ -528,11 +529,10 @@ footer span{color:var(--green);}
         <div class="exp-date">Mayo 2023 – Julio 2023 · Prácticas ASIR (FCT)</div>
       </div>
       <ul class="exp-list">
-        <li>Participé en la <strong>migración del entorno de monitorización Pandora FMS,</strong> colaborando en tareas de actualización del sistema y documentación del proceso.</li>
-        <li>Realicé pruebas con <strong>PRTG Network Monitor,</strong> configurando servicios SNMP y NetFlow para evaluar su posible implantación en distintos entornos.</li>
-        <li>Analicé tráfico de red con <strong>Wireshark</strong> para apoyar tareas de diagnóstico y monitorización de infraestructuras TCP/IP.</li>
-        <li>Colaboré en la resolución de incidencias de <strong>sistemas, hardware y entornos virtualizados.</strong></li>
-        <li>Elaboré <strong>documentación técnica y procedimientos</strong> de instalación y configuración para facilitar la transferencia de conocimiento al equipo.</li>
+        <li>Migré el servidor <strong>Pandora FMS</strong> completo —sistema operativo y base de datos incluidos— manteniendo el servicio activo durante todo el proceso y sin pérdida de datos.</li>
+        <li>Desplegué <strong>PRTG Network Monitor</strong> con SNMP y NetFlow para monitorización de tráfico TCP/IP, y evalué Wireshark como herramienta complementaria, documentando la viabilidad de ambas para su implantación en la empresa.</li>
+        <li>Participé en el diagnóstico y resolución de averías en <strong>sistemas, hardware y entornos virtualizados,</strong> incluyendo intervenciones en cliente junto a técnico senior.</li>
+        <li>Redacté <strong>guías técnicas</strong> de instalación, configuración y análisis de cada herramienta para que el equipo pudiera replicar el proceso de forma autónoma.</li>
       </ul>
     </div>
 
