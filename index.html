@@ -4,52 +4,73 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kelly Barco · Portfolio · ASIR Ciberseguridad</title>
+<meta name="description" content="Portfolio de Kelly Barco, Técnica Superior en ASIR con perfil en Ciberseguridad Defensiva. Laboratorios de IDS, SIEM, Active Directory y más. Disponible en Bizkaia.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
+/* ─── VARIABLES ─────────────────────────────────────────────── */
 :root {
   --bg:#060a0f; --bg2:#0b1118; --bg3:#101820;
   --green:#00ff88; --cyan:#00e5ff; --yellow:#ffd600; --red:#ff3b6b;
-  --text:#c8d8e8; --muted:#4a6070; --border:#1a2a38;
+  --text:#c8d8e8; --muted:#6a8090; --border:#1e3040;
   --mono:'Share Tech Mono',monospace; --sans:'Rajdhani',sans-serif;
+  --container:1100px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
 body{background:var(--bg);color:var(--text);font-family:var(--sans);overflow-x:hidden;cursor:none;}
+
+/* ─── CURSOR ────────────────────────────────────────────────── */
 .cursor{width:10px;height:10px;background:var(--green);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;box-shadow:0 0 10px var(--green),0 0 25px rgba(0,255,136,.3);}
 .cursor-trail{width:28px;height:28px;border:1px solid rgba(0,255,136,.3);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9998;transition:all .12s ease;}
+
+/* ─── OVERLAYS ──────────────────────────────────────────────── */
 body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.07) 2px,rgba(0,0,0,.07) 4px);pointer-events:none;z-index:1000;}
 body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(0,255,136,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,136,.025) 1px,transparent 1px);background-size:50px 50px;pointer-events:none;z-index:0;}
 
-nav{position:fixed;top:0;left:0;right:0;z-index:900;padding:.85rem 2rem;display:flex;justify-content:space-between;align-items:center;background:rgba(6,10,15,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);}
+/* ─── NAV ───────────────────────────────────────────────────── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:900;
+  padding:.9rem 2rem;
+  display:flex;justify-content:space-between;align-items:center;
+  background:rgba(6,10,15,.97);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(0,255,136,.18);
+}
 .nav-logo{font-family:var(--mono);font-size:.82rem;color:var(--green);}
 .nav-logo span{color:var(--muted);}
 .nav-links{display:flex;gap:1.8rem;list-style:none;}
-.nav-links a{font-family:var(--mono);font-size:.7rem;color:var(--muted);text-decoration:none;letter-spacing:.15em;text-transform:uppercase;transition:color .2s;}
+.nav-links a{
+  font-family:var(--mono);font-size:.7rem;
+  color:#8aaabb;
+  text-decoration:none;letter-spacing:.15em;text-transform:uppercase;
+  transition:color .2s;
+}
 .nav-links a:hover{color:var(--green);}
 .nav-links a::before{content:'> ';color:var(--green);opacity:0;transition:opacity .2s;}
 .nav-links a:hover::before{opacity:1;}
 
+/* ─── LAYOUT BASE ───────────────────────────────────────────── */
 section{position:relative;z-index:1;}
-.container{max-width:1100px;margin:0 auto;padding:0 2rem;}
+.container{max-width:var(--container);margin:0 auto;padding:0 2.5rem;}
 .section-header{display:flex;align-items:center;gap:1.2rem;margin-bottom:2.5rem;}
 .sec-num{font-family:var(--mono);font-size:.65rem;color:var(--green);opacity:.6;}
 h2{font-family:var(--sans);font-size:clamp(1.7rem,4vw,2.4rem);font-weight:700;color:#fff;letter-spacing:-.02em;}
 .sec-line{flex:1;height:1px;background:linear-gradient(90deg,var(--border),transparent);}
 
-/* HERO */
-#hero{min-height:100vh;display:flex;align-items:center;padding:6rem 2rem 4rem;max-width:1100px;margin:0 auto;}
+/* ─── HERO ──────────────────────────────────────────────────── */
+#hero{min-height:100vh;display:flex;align-items:center;padding:6rem 0 4rem;}
+#hero .container{width:100%;}
 .hero-tag{font-family:var(--mono);font-size:.7rem;color:var(--green);letter-spacing:.2em;text-transform:uppercase;margin-bottom:1.2rem;display:flex;align-items:center;gap:.7rem;}
 .hero-tag::before{content:'';display:block;width:1.8rem;height:1px;background:var(--green);}
 .hero-location{font-family:var(--mono);font-size:.7rem;color:var(--muted);margin-bottom:1.8rem;letter-spacing:.1em;}
 .hero-location span{color:var(--cyan);}
 h1{font-family:var(--sans);font-size:clamp(2.4rem,7vw,5rem);font-weight:700;line-height:1.05;letter-spacing:-.02em;color:#fff;margin-bottom:.4rem;}
-h1 .accent{color:var(--green);}
-.hero-role{font-family:var(--mono);font-size:clamp(.85rem,2vw,1.2rem);color:var(--cyan);margin-bottom:.8rem;}
+.hero-role{font-family:var(--mono);font-size:clamp(.85rem,2vw,1.2rem);color:var(--cyan);margin-bottom:.8rem;min-height:1.8rem;}
 .blink{display:inline-block;width:2px;height:.9em;background:var(--cyan);vertical-align:middle;animation:blink 1s step-end infinite;}
 @keyframes blink{50%{opacity:0;}}
 .hero-quote{font-family:var(--mono);font-size:.8rem;color:var(--muted);border-left:2px solid var(--green);padding-left:1rem;margin-bottom:1.5rem;font-style:italic;line-height:1.6;}
-.hero-desc{font-size:1.05rem;font-weight:300;color:var(--text);line-height:1.75;margin-bottom:2rem;max-width:560px;}
+.hero-desc{font-size:1.05rem;font-weight:300;color:var(--text);line-height:1.75;margin-bottom:2rem;max-width:580px;}
 .hero-badges{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:2rem;}
 .badge{font-family:var(--mono);font-size:.65rem;padding:.25rem .7rem;border:1px solid var(--border);color:var(--muted);letter-spacing:.08em;transition:all .2s;}
 .badge:hover,.badge.hi{border-color:var(--green);color:var(--green);background:rgba(0,255,136,.05);}
@@ -59,10 +80,8 @@ h1 .accent{color:var(--green);}
 .btn-primary:hover{background:#00cc6a;box-shadow:0 0 28px rgba(0,255,136,.4);transform:translateY(-2px);}
 .btn-ghost{border:1px solid var(--border);color:var(--text);}
 .btn-ghost:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-2px);}
-.btn-outline{border:1px solid rgba(0,255,136,.4);color:var(--green);}
-.btn-outline:hover{border-color:var(--green);background:rgba(0,255,136,.07);transform:translateY(-2px);}
 
-/* SOBRE MÍ */
+/* ─── SOBRE MÍ ──────────────────────────────────────────────── */
 #sobre{padding:6rem 0;border-top:1px solid var(--border);}
 .sobre-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start;}
 .sobre-text p{font-size:1rem;line-height:1.85;color:var(--text);margin-bottom:1.1rem;font-weight:300;}
@@ -71,36 +90,103 @@ h1 .accent{color:var(--green);}
 .info-item{background:var(--bg2);border:1px solid var(--border);padding:.85rem;}
 .info-label{font-family:var(--mono);font-size:.6rem;color:var(--muted);letter-spacing:.18em;text-transform:uppercase;margin-bottom:.2rem;}
 .info-value{font-family:var(--sans);font-size:.9rem;font-weight:600;color:var(--cyan);}
-.terminal-box{background:var(--bg2);border:1px solid var(--border);padding:1.3rem;font-family:var(--mono);font-size:.74rem;line-height:1.9;}
-.terminal-box::before{content:'● ● ●';display:block;font-size:.56rem;color:var(--muted);margin-bottom:.85rem;letter-spacing:.45em;}
-.t-g{color:var(--green);} .t-c{color:var(--cyan);} .t-y{color:var(--yellow);} .t-m{color:var(--muted);}
 
-/* LABS */
+/* ─── LABORATORIOS ──────────────────────────────────────────── */
 #labs{padding:6rem 0;border-top:1px solid var(--border);background:linear-gradient(180deg,transparent,rgba(0,229,255,.015),transparent);}
 .filter-bar{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:2rem;}
 .filter-btn{font-family:var(--mono);font-size:.65rem;padding:.28rem .8rem;border:1px solid var(--border);color:var(--muted);background:transparent;cursor:pointer;letter-spacing:.1em;transition:all .2s;}
 .filter-btn:hover,.filter-btn.active{border-color:var(--green);color:var(--green);background:rgba(0,255,136,.05);}
-.labs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.2rem;}
-.lab-card{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--green);padding:1.5rem;transition:transform .2s,border-color .2s;}
-.lab-card:hover{transform:translateY(-3px);border-color:rgba(0,255,136,.4);}
+.labs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.4rem;}
+
+/* Card base */
+.lab-card{
+  background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--green);
+  display:flex;flex-direction:column;
+  transition:transform .2s,border-color .2s,box-shadow .2s;
+  overflow:hidden;
+}
+.lab-card:hover{transform:translateY(-4px);border-color:rgba(0,255,136,.45);box-shadow:0 8px 32px rgba(0,255,136,.07);}
 .lab-card.wip{border-left-color:var(--yellow);}
 .lab-card.soon{border-left-color:var(--border);opacity:.4;}
-.lab-card.soon:hover{transform:none;}
+.lab-card.soon:hover{transform:none;box-shadow:none;}
+
+/* Imagen de portada */
+.lab-cover{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;border-bottom:1px solid var(--border);background:var(--bg3);}
+.lab-cover-placeholder{
+  width:100%;aspect-ratio:16/9;
+  background:linear-gradient(135deg,var(--bg3) 0%,#0d1f2d 100%);
+  display:flex;align-items:center;justify-content:center;
+  border-bottom:1px solid var(--border);
+  font-family:var(--mono);font-size:.65rem;color:var(--border);letter-spacing:.15em;
+}
+
+.lab-body{padding:1.5rem;display:flex;flex-direction:column;flex:1;}
 .lab-status{font-family:var(--mono);font-size:.6rem;letter-spacing:.15em;color:var(--green);margin-bottom:.5rem;}
 .lab-card.wip .lab-status{color:var(--yellow);}
 .lab-card.soon .lab-status{color:var(--muted);}
 .lab-title{font-size:1rem;font-weight:700;color:#fff;margin-bottom:.45rem;line-height:1.35;}
-.lab-desc{font-size:.875rem;color:var(--text);line-height:1.75;margin-bottom:1rem;font-weight:300;}
+.lab-desc{font-size:.875rem;color:var(--text);line-height:1.75;margin-bottom:1rem;font-weight:300;flex:1;}
 .lab-tags{display:flex;flex-wrap:wrap;gap:.32rem;margin-bottom:1rem;}
 .lab-tag{font-family:var(--mono);font-size:.6rem;padding:.18rem .52rem;background:rgba(0,255,136,.07);border:1px solid rgba(0,255,136,.18);color:var(--green);}
 .lab-tag.yellow{background:rgba(255,214,0,.07);border-color:rgba(255,214,0,.2);color:var(--yellow);}
-.lab-links{display:flex;gap:.45rem;flex-wrap:wrap;}
-.lab-link{font-family:var(--mono);font-size:.65rem;padding:.25rem .7rem;border:1px solid var(--border);color:var(--cyan);text-decoration:none;transition:all .2s;}
+.lab-links{display:flex;gap:.45rem;flex-wrap:wrap;align-items:center;}
+.lab-link{font-family:var(--mono);font-size:.65rem;padding:.25rem .7rem;border:1px solid var(--border);color:var(--cyan);text-decoration:none;transition:all .2s;background:none;cursor:pointer;}
 .lab-link:hover{border-color:var(--cyan);background:rgba(0,229,255,.04);}
 .lab-link.pdf{color:var(--green);border-color:rgba(0,255,136,.3);}
 .lab-link.pdf:hover{border-color:var(--green);background:rgba(0,255,136,.05);}
+.lab-link.media{color:var(--yellow);border-color:rgba(255,214,0,.3);margin-left:auto;}
+.lab-link.media:hover{border-color:var(--yellow);background:rgba(255,214,0,.05);}
 
-/* EXPERIENCIA */
+/* ─── MODAL ─────────────────────────────────────────────────── */
+.modal-overlay{
+  display:none;position:fixed;inset:0;z-index:2000;
+  background:rgba(4,8,12,.93);backdrop-filter:blur(8px);
+  overflow-y:auto;padding:2rem 1rem;
+  align-items:flex-start;justify-content:center;
+}
+.modal-overlay.open{display:flex;}
+.modal-box{
+  background:var(--bg2);border:1px solid var(--border);
+  max-width:860px;width:100%;position:relative;
+  animation:modalIn .25s ease;
+}
+@keyframes modalIn{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.modal-close{
+  position:absolute;top:1rem;right:1rem;
+  font-family:var(--mono);font-size:.75rem;color:var(--muted);
+  background:none;border:1px solid var(--border);padding:.2rem .55rem;
+  cursor:pointer;transition:all .2s;z-index:10;
+}
+.modal-close:hover{color:var(--red);border-color:var(--red);}
+.modal-header{padding:1.5rem;border-bottom:1px solid var(--border);}
+.modal-status{font-family:var(--mono);font-size:.6rem;color:var(--green);letter-spacing:.15em;margin-bottom:.4rem;}
+.modal-title{font-size:1.3rem;font-weight:700;color:#fff;line-height:1.3;}
+
+/* Vídeo embed */
+.modal-video-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-bottom:1px solid var(--border);background:#000;}
+.modal-video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:none;}
+.hidden{display:none!important;}
+
+/* Galería */
+.modal-gallery{padding:1.2rem 1.5rem;border-bottom:1px solid var(--border);}
+.modal-gallery-label{font-family:var(--mono);font-size:.6rem;color:var(--muted);letter-spacing:.18em;text-transform:uppercase;margin-bottom:.85rem;}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:.6rem;}
+.gallery-grid img{width:100%;aspect-ratio:4/3;object-fit:cover;border:1px solid var(--border);cursor:pointer;transition:transform .2s,border-color .2s;display:block;}
+.gallery-grid img:hover{transform:scale(1.03);border-color:var(--green);}
+
+/* Lightbox */
+.lightbox{display:none;position:fixed;inset:0;z-index:3000;background:rgba(0,0,0,.92);align-items:center;justify-content:center;}
+.lightbox.open{display:flex;}
+.lightbox img{max-width:92vw;max-height:88vh;object-fit:contain;border:1px solid var(--border);}
+.lightbox-close{position:fixed;top:1.2rem;right:1.5rem;font-family:var(--mono);font-size:1rem;color:var(--muted);background:none;border:none;cursor:pointer;transition:color .2s;}
+.lightbox-close:hover{color:var(--red);}
+
+.modal-body{padding:1.5rem;}
+.modal-desc{font-size:.92rem;color:var(--text);line-height:1.85;font-weight:300;margin-bottom:1.2rem;}
+.modal-tags{display:flex;flex-wrap:wrap;gap:.32rem;margin-bottom:1.2rem;}
+.modal-links{display:flex;gap:.5rem;flex-wrap:wrap;}
+
+/* ─── EXPERIENCIA ───────────────────────────────────────────── */
 #experiencia{padding:6rem 0;border-top:1px solid var(--border);}
 .exp-card{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--cyan);padding:2rem;margin-bottom:1.2rem;}
 .exp-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;flex-wrap:wrap;gap:.5rem;}
@@ -110,10 +196,8 @@ h1 .accent{color:var(--green);}
 .exp-list{list-style:none;display:flex;flex-direction:column;gap:.55rem;}
 .exp-list li{font-size:.9rem;color:var(--text);font-weight:300;line-height:1.7;display:flex;align-items:flex-start;gap:.6rem;}
 .exp-list li::before{content:'▸';color:var(--green);font-size:.7rem;flex-shrink:0;margin-top:.25rem;}
-.exp-card.soft{border-left-color:var(--muted);}
-.exp-card.soft .exp-date{color:var(--muted);}
 
-/* HABILIDADES */
+/* ─── HABILIDADES ───────────────────────────────────────────── */
 #habilidades{padding:6rem 0;border-top:1px solid var(--border);}
 .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:1.1rem;}
 .skill-cat{background:var(--bg2);border:1px solid var(--border);padding:1.3rem;}
@@ -123,7 +207,7 @@ h1 .accent{color:var(--green);}
 .skill-bar-wrap{width:85px;height:2px;background:var(--border);}
 .skill-bar{height:100%;background:linear-gradient(90deg,var(--green),var(--cyan));transition:width 1.5s cubic-bezier(.4,0,.2,1);}
 
-/* FORMACIÓN */
+/* ─── FORMACIÓN ─────────────────────────────────────────────── */
 #formacion{padding:6rem 0;border-top:1px solid var(--border);background:linear-gradient(180deg,transparent,rgba(0,255,136,.01),transparent);}
 .timeline{position:relative;padding-left:1.8rem;}
 .timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(180deg,var(--green),var(--muted));}
@@ -133,8 +217,14 @@ h1 .accent{color:var(--green);}
 .tl-title{font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:.12rem;}
 .tl-org{font-size:.88rem;color:var(--cyan);margin-bottom:.45rem;}
 .tl-desc{font-size:.87rem;color:var(--text);line-height:1.75;font-weight:300;}
+.tl-verify{
+  font-family:var(--mono);font-size:.62rem;color:var(--green);
+  margin-left:.7rem;border:1px solid rgba(0,255,136,.3);
+  padding:.1rem .45rem;text-decoration:none;vertical-align:middle;transition:all .2s;
+}
+.tl-verify:hover{background:rgba(0,255,136,.07);border-color:var(--green);}
 
-/* CONTACTO */
+/* ─── CONTACTO ──────────────────────────────────────────────── */
 #contacto{padding:6rem 0;border-top:1px solid var(--border);}
 .contacto-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start;}
 .contacto-text h3{font-size:1.7rem;font-weight:700;color:#fff;margin-bottom:.9rem;line-height:1.2;}
@@ -144,24 +234,25 @@ h1 .accent{color:var(--green);}
 .contact-link{display:flex;align-items:center;gap:.9rem;font-family:var(--mono);font-size:.75rem;color:var(--text);text-decoration:none;padding:.6rem .85rem;border:1px solid var(--border);transition:all .2s;}
 .contact-link:hover{border-color:var(--green);color:var(--green);background:rgba(0,255,136,.04);transform:translateX(4px);}
 .contact-link-icon{color:var(--green);font-size:1rem;}
-.pdf-card{background:var(--bg2);border:1px solid var(--border);padding:1.7rem;}
-.pdf-label{font-family:var(--mono);font-size:.6rem;color:var(--muted);letter-spacing:.18em;text-transform:uppercase;margin-bottom:.85rem;}
-.pdf-title{font-size:.97rem;font-weight:600;color:#fff;margin-bottom:.38rem;line-height:1.4;}
-.pdf-meta{font-size:.82rem;color:var(--muted);margin-bottom:1.2rem;line-height:1.6;}
-.pdf-btn{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--mono);font-size:.7rem;padding:.55rem 1rem;border:1px solid var(--green);color:var(--green);text-decoration:none;letter-spacing:.08em;transition:all .2s;}
-.pdf-btn:hover{background:rgba(0,255,136,.08);box-shadow:0 0 18px rgba(0,255,136,.18);}
 
+/* ─── FOOTER ────────────────────────────────────────────────── */
 footer{border-top:1px solid var(--border);padding:1.6rem 2rem;text-align:center;font-family:var(--mono);font-size:.66rem;color:var(--muted);position:relative;z-index:1;}
 footer span{color:var(--green);}
+
+/* ─── ANIMACIONES ───────────────────────────────────────────── */
 .fade-in{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease;}
 .fade-in.visible{opacity:1;transform:translateY(0);}
 
+/* ─── RESPONSIVE ────────────────────────────────────────────── */
 @media(max-width:768px){
+  .container{padding:0 1.25rem;}
   .sobre-grid,.contacto-grid{grid-template-columns:1fr;gap:2rem;}
   .nav-links{display:none;}
   h1{font-size:2.2rem;}
   .labs-grid{grid-template-columns:1fr;}
   .exp-header{flex-direction:column;}
+  .modal-box{margin:0;}
+  .gallery-grid{grid-template-columns:repeat(2,1fr);}
 }
 </style>
 </head>
@@ -170,6 +261,7 @@ footer span{color:var(--green);}
 <div class="cursor" id="cursor"></div>
 <div class="cursor-trail" id="cursorTrail"></div>
 
+<!-- ─── NAV ─────────────────────────────────────────────────── -->
 <nav>
   <div class="nav-logo"><span>~/</span>kelly-barco</div>
   <ul class="nav-links">
@@ -182,34 +274,33 @@ footer span{color:var(--green);}
   </ul>
 </nav>
 
-<!-- HERO -->
+<!-- ─── HERO ─────────────────────────────────────────────────── -->
 <section id="hero">
-  <div>
+  <div class="container">
     <div class="hero-tag">Disponible para trabajar · Bizkaia</div>
-    <h1>Kelly Barco<br></span></h1>
+    <h1>Kelly Barco</h1>
     <div class="hero-role" id="typedRole"><span class="blink"></span></div>
     <div class="hero-location">📍 <span>Bizkaia, España</span> · Presencial o Remoto</div>
     <blockquote class="hero-quote">"Me formé en administración de sistemas, redes y ciberseguridad. Para mi Proyecto de Fin de Grado, implementé desde cero un laboratorio de Sistema de Detección, Monitorización y Prevención de Intrusos, superando el reto de conectar estas tecnologías en un entorno seguro."</blockquote>
-    <p class="hero-desc">Busco mi primer rol en IT, empezando por sistemas o redes, con la idea clara de crecer hacia el Blue Team. En este porfolio recojo mis laboratorios y proyectos actuales; un espacio que estará en constante crecimiento.
+<p class="hero-desc">Busco mi primer rol en IT, empezando por sistemas o redes, con la idea clara de crecer hacia el Blue Team. En este porfolio recojo mis laboratorios y proyectos actuales; un espacio que estará en constante crecimiento.</p>
     <div class="hero-badges">
       <span class="badge hi">Ciberseguridad Defensiva</span>
-      <span class="badge">Linux</span>
+      <span class="badge">Linux · Windows Server</span>
       <span class="badge">IDS / SIEM</span>
-      <span class="badge">Python · Bash</span>
+      <span class="badge">Python · Bash · SQL</span>
       <span class="badge">Kali Linux</span>
-      <span class="badge">Active Directory</span>
+      <span class="badge">Active Directory · GPO</span>
       <span class="badge">Redes · VLANs</span>
-      <span class="badge">Pandora FMS</span>
+      <span class="badge">Pandora FMS · PRTG</span>
     </div>
     <div class="cta-row">
       <a href="#labs" class="btn btn-primary">Ver laboratorios ↓</a>
       <a href="#contacto" class="btn btn-ghost">Contactar</a>
-      <a href="TU-CV-PDF-AQUI" class="btn btn-outline" download>CV PDF ↓</a>
     </div>
   </div>
 </section>
 
-<!-- SOBRE MÍ -->
+<!-- ─── SOBRE MÍ ──────────────────────────────────────────────── -->
 <section id="sobre">
   <div class="container">
     <div class="section-header fade-in">
@@ -219,9 +310,9 @@ footer span{color:var(--green);}
     </div>
     <div class="sobre-grid">
       <div class="sobre-text fade-in">
-        <p>Mi relación con la informática no empezó en un aula; nació de la <strong> curiosidad nativa y autodidacta</strong> de querer entender cómo funcionan los <strong>sistemas informáticos.</strong> Decidí consolidar esa vocación titulándome oficialmente como <strong>Técnica Superior en Administración de Sistemas Informáticos en Red (ASIR)</strong> con perfil en ciberseguridad, un camino que complementé certificándome también en <strong>Soporte de TI por Google.</strong></p>
-        <p>Lo que me diferencia como profesional es la unión de dos mundos: una <strong>madurez laboral sólida</strong> y una <strong>mentalidad técnica meticulosa.</strong> Soy una persona metódica y detallista. Me gusta que las cosas estén limpias, bien estructuradas y ordenadas. En sistemas e infraestructuras críticas, sé perfectamente que los pequeños detalles son los que marcan la diferencia entre un entorno seguro y uno vulnerable.</p>
-        <p>Aporto <strong>más de 10 años de trayectoria laboral previa</strong> en sectores de alta responsabilidad. Esa experiencia me ha dotado de habilidades blandas (soft skills) cruciales en IT: una disciplina de hierro, gran capacidad de resolución autónoma de incidencias y una resiliencia total cuando las cosas no salen a la primera.</p>
+        <p>Mi relación con la informática nació de la <strong>curiosidad autodidacta</strong> de entender cómo funcionan los sistemas. Decidí consolidar esa vocación titulándome como <strong>Técnica Superior en Administración de Sistemas Informáticos en Red (ASIR)</strong> con perfil en ciberseguridad, complementado con la certificación de <strong>Soporte de TI de Google.</strong></p>
+        <p>Durante la formación trabajé con <strong>Linux y Windows Server, virtualización, administración de redes, monitorización y análisis de tráfico.</strong> Como proyecto final diseñé e implementé un laboratorio completo de detección y respuesta ante incidentes con Suricata, Wazuh y automatización en Python.</p>
+        <p>Aporto una <strong>transición profesional real y demostrada:</strong> compaginé trabajo y formación ASIR durante años. Esa etapa me dotó de planificación autónoma, gestión de plazos y una disciplina directamente trasladable a la gestión de sistemas críticos.</p>
       </div>
       <div class="fade-in">
         <div class="info-grid">
@@ -237,7 +328,7 @@ footer span{color:var(--green);}
   </div>
 </section>
 
-<!-- LABORATORIOS -->
+<!-- ─── LABORATORIOS ──────────────────────────────────────────── -->
 <section id="labs">
   <div class="container">
     <div class="section-header fade-in">
@@ -252,65 +343,174 @@ footer span{color:var(--green);}
       <button class="filter-btn" data-filter="redes">Redes</button>
       <button class="filter-btn" data-filter="scripting">Scripting</button>
     </div>
+
     <div class="labs-grid" id="labsGrid">
 
+      <!-- ── LAB 01 · TFG ──────────────────────────────────── -->
+      <!--
+        PORTADA: reemplaza el placeholder por:
+        <img class="lab-cover" src="labs/lab01/portada.jpg" alt="Lab IDS/SIEM">
+        VÍDEO en el modal: pon la URL embed en data-video del .modal-box
+        FOTOS en el modal: añade <img src="..."> dentro de .gallery-grid
+      -->
       <div class="lab-card fade-in" data-cats="ciberseguridad redes scripting sistemas">
-        <div class="lab-status">// LAB 01 · COMPLETADO · TFG ASIR</div>
-        <div class="lab-title">Sistema de Detección, Monitorización y Prevención de Intrusos</div>
-        <div class="lab-desc">Infraestructura defensiva completa desplegada en VirtualBox con 4 máquinas. Honeypot Chameleon como señuelo, IDS Suricata vigilando el tráfico, SIEM Wazuh centralizando alertas y bloqueo automático de IPs atacantes con Python + Bash + iptables. 100% open source, coste: 0€.</div>
-        <div class="lab-tags">
-          <span class="lab-tag">Honeypot Chameleon</span>
-          <span class="lab-tag">Suricata IDS/IPS</span>
-          <span class="lab-tag">Wazuh SIEM</span>
-          <span class="lab-tag">iptables</span>
-          <span class="lab-tag">Python</span>
-          <span class="lab-tag">Bash</span>
-          <span class="lab-tag">Crontab</span>
-          <span class="lab-tag">Kali Linux</span>
-          <span class="lab-tag">Metasploit</span>
-          <span class="lab-tag">Hydra</span>
-          <span class="lab-tag">MITRE ATT&amp;CK</span>
-        </div>
-        <div class="lab-links">
-          <a href="https://github.com/kellybarco/Proyecto-Final-ASIR-Deteccion-Intrusos" class="lab-link" target="_blank">GitHub ↗</a>
-          <a href="ASIX_CIBER_M14_T03_ACT_02_Kelly_Barco_Memoria_del_proyecto_.pdf" class="lab-link pdf" download>Memoria PDF ↓</a>
+        <div class="lab-cover-placeholder">[ PORTADA LAB 01 ]</div>
+        <div class="lab-body">
+          <div class="lab-status">// LAB 01 · COMPLETADO · TFG ASIR</div>
+          <div class="lab-title">Sistema de Detección, Monitorización y Prevención de Intrusos</div>
+          <div class="lab-desc">Infraestructura defensiva completa desplegada en VirtualBox con 4 máquinas. Honeypot Chameleon como señuelo, IDS Suricata vigilando el tráfico, SIEM Wazuh centralizando alertas y bloqueo automático de IPs con Python + Bash + iptables. 100% open source, coste: 0€.</div>
+          <div class="lab-tags">
+            <span class="lab-tag">Honeypot Chameleon</span>
+            <span class="lab-tag">Suricata IDS/IPS</span>
+            <span class="lab-tag">Wazuh SIEM</span>
+            <span class="lab-tag">iptables</span>
+            <span class="lab-tag">Python</span>
+            <span class="lab-tag">Bash</span>
+            <span class="lab-tag">Kali Linux</span>
+            <span class="lab-tag">MITRE ATT&amp;CK</span>
+          </div>
+          <div class="lab-links">
+            <a href="https://github.com/kellybarco/Proyecto-Final-ASIR-Deteccion-Intrusos" class="lab-link" target="_blank">GitHub ↗</a>
+            <a href="ASIX_CIBER_M14_T03_ACT_02_Kelly_Barco_Memoria_del_proyecto_.pdf" class="lab-link pdf" download>Memoria PDF ↓</a>
+            <button class="lab-link media" onclick="openModal('modal-lab01')">Ver lab ▶</button>
+          </div>
         </div>
       </div>
 
+      <!-- ── LAB 02 · EN PROGRESO ──────────────────────────── -->
       <div class="lab-card wip fade-in" data-cats="sistemas redes">
-        <div class="lab-status">// LAB 02 · EN PROGRESO 🛠</div>
-        <div class="lab-title">Enterprise Security &amp; Systems Range Lab</div>
-        <div class="lab-desc">Simulación de entorno corporativo real. Active Directory con usuarios, GPOs y políticas de seguridad. Hardening de sistemas Windows y Linux, gestión de vulnerabilidades y análisis forense digital.</div>
-        <div class="lab-tags">
-          <span class="lab-tag yellow">Windows Server</span>
-          <span class="lab-tag yellow">Active Directory</span>
-          <span class="lab-tag yellow">GPOs</span>
-          <span class="lab-tag yellow">Hardening</span>
-          <span class="lab-tag yellow">DNS · DHCP</span>
-          <span class="lab-tag yellow">Forense Digital</span>
+        <div class="lab-cover-placeholder">[ PORTADA LAB 02 ]</div>
+        <div class="lab-body">
+          <div class="lab-status">// LAB 02 · EN PROGRESO 🛠</div>
+          <div class="lab-title">Enterprise Security &amp; Systems Range Lab</div>
+          <div class="lab-desc">Simulación de entorno corporativo real. Active Directory con usuarios, GPOs y políticas de seguridad. Hardening de sistemas Windows y Linux, gestión de vulnerabilidades y análisis forense digital.</div>
+          <div class="lab-tags">
+            <span class="lab-tag yellow">Windows Server</span>
+            <span class="lab-tag yellow">Active Directory</span>
+            <span class="lab-tag yellow">GPOs</span>
+            <span class="lab-tag yellow">Hardening</span>
+            <span class="lab-tag yellow">DNS · DHCP</span>
+            <span class="lab-tag yellow">Forense Digital</span>
+          </div>
+          <div class="lab-links">
+            <a href="https://github.com/kellybarco/Enterprise-Security-Lab" class="lab-link" target="_blank">GitHub ↗</a>
+            <button class="lab-link media" onclick="openModal('modal-lab02')">Ver lab ▶</button>
+          </div>
         </div>
-        <div class="lab-links">
-          <a href="https://github.com/kellybarco/Enterprise-Security-Lab" class="lab-link" target="_blank">GitHub ↗</a>
+      </div>
+
+      <!-- ── PRÓXIMAMENTE ─────────────────────────────────── -->
+      <div class="lab-card soon fade-in" data-cats="">
+        <div class="lab-cover-placeholder">[ PRÓXIMAMENTE ]</div>
+        <div class="lab-body">
+          <div class="lab-status">// LAB 03 · PRÓXIMAMENTE</div>
+          <div class="lab-title">Próximo laboratorio</div>
+          <div class="lab-desc">Nuevas áreas en progreso. Vuelve pronto.</div>
         </div>
       </div>
 
       <div class="lab-card soon fade-in" data-cats="">
-        <div class="lab-status">// LAB 03 · PRÓXIMAMENTE</div>
-        <div class="lab-title">Próximo laboratorio</div>
-        <div class="lab-desc">Nuevas áreas en progreso. Vuelve pronto.</div>
-      </div>
-
-      <div class="lab-card soon fade-in" data-cats="">
-        <div class="lab-status">// LAB 04 · PRÓXIMAMENTE</div>
-        <div class="lab-title">Próximo laboratorio</div>
-        <div class="lab-desc">Este portfolio crece con cada nuevo reto.</div>
+        <div class="lab-cover-placeholder">[ PRÓXIMAMENTE ]</div>
+        <div class="lab-body">
+          <div class="lab-status">// LAB 04 · PRÓXIMAMENTE</div>
+          <div class="lab-title">Próximo laboratorio</div>
+          <div class="lab-desc">Este portfolio crece con cada nuevo reto.</div>
+        </div>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- EXPERIENCIA -->
+<!-- ─── MODAL LAB 01 ──────────────────────────────────────────── -->
+<div class="modal-overlay" id="modal-lab01">
+  <div class="modal-box" data-video="">
+    <!-- Para añadir vídeo: data-video="https://www.youtube.com/embed/TU_ID" -->
+    <button class="modal-close" onclick="closeModal('modal-lab01')">✕ cerrar</button>
+    <div class="modal-header">
+      <div class="modal-status">// LAB 01 · COMPLETADO · TFG ASIR</div>
+      <div class="modal-title">Sistema de Detección, Monitorización y Prevención de Intrusos</div>
+    </div>
+    <div class="modal-video-wrap hidden" id="modal-lab01-video"></div>
+    <div class="modal-gallery">
+      <div class="modal-gallery-label">// Capturas del laboratorio</div>
+      <div class="gallery-grid">
+        <!--
+          Cuando tengas fotos, sustituye los placeholders por:
+          <img src="labs/lab01/foto1.jpg" alt="Arquitectura de red">
+          <img src="labs/lab01/foto2.jpg" alt="Dashboard Wazuh">
+          <img src="labs/lab01/foto3.jpg" alt="Suricata alertas">
+          <img src="labs/lab01/foto4.jpg" alt="Honeypot Chameleon">
+        -->
+        <div style="aspect-ratio:4/3;background:var(--bg3);border:1px dashed var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.6rem;color:var(--border);">foto 01</div>
+        <div style="aspect-ratio:4/3;background:var(--bg3);border:1px dashed var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.6rem;color:var(--border);">foto 02</div>
+        <div style="aspect-ratio:4/3;background:var(--bg3);border:1px dashed var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.6rem;color:var(--border);">foto 03</div>
+        <div style="aspect-ratio:4/3;background:var(--bg3);border:1px dashed var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.6rem;color:var(--border);">foto 04</div>
+      </div>
+    </div>
+    <div class="modal-body">
+      <p class="modal-desc">Infraestructura defensiva completa desplegada en VirtualBox con 4 máquinas virtuales interconectadas. El honeypot Chameleon actúa como señuelo, Suricata inspecciona el tráfico en tiempo real, Wazuh centraliza y correlaciona las alertas, y un script Python + Bash reacciona bloqueando automáticamente las IPs atacantes mediante iptables. Todo el proceso fue validado simulando ataques reales con Kali Linux, Metasploit e Hydra, mapeando los TTPs al framework MITRE ATT&CK. Coste de infraestructura: 0€.</p>
+      <div class="modal-tags">
+        <span class="lab-tag">Honeypot Chameleon</span>
+        <span class="lab-tag">Suricata IDS/IPS</span>
+        <span class="lab-tag">Wazuh SIEM</span>
+        <span class="lab-tag">iptables</span>
+        <span class="lab-tag">Python</span>
+        <span class="lab-tag">Bash</span>
+        <span class="lab-tag">Crontab</span>
+        <span class="lab-tag">Kali Linux</span>
+        <span class="lab-tag">Metasploit</span>
+        <span class="lab-tag">Hydra</span>
+        <span class="lab-tag">MITRE ATT&amp;CK</span>
+      </div>
+      <div class="modal-links">
+        <a href="https://github.com/kellybarco/Proyecto-Final-ASIR-Deteccion-Intrusos" class="lab-link" target="_blank">GitHub ↗</a>
+        <a href="ASIX_CIBER_M14_T03_ACT_02_Kelly_Barco_Memoria_del_proyecto_.pdf" class="lab-link pdf" download>Memoria PDF ↓</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── MODAL LAB 02 ──────────────────────────────────────────── -->
+<div class="modal-overlay" id="modal-lab02">
+  <div class="modal-box" data-video="">
+    <button class="modal-close" onclick="closeModal('modal-lab02')">✕ cerrar</button>
+    <div class="modal-header">
+      <div class="modal-status">// LAB 02 · EN PROGRESO 🛠</div>
+      <div class="modal-title">Enterprise Security &amp; Systems Range Lab</div>
+    </div>
+    <div class="modal-video-wrap hidden" id="modal-lab02-video"></div>
+    <div class="modal-gallery">
+      <div class="modal-gallery-label">// Capturas del laboratorio</div>
+      <div class="gallery-grid">
+        <div style="aspect-ratio:4/3;background:var(--bg3);border:1px dashed var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.6rem;color:var(--border);">en progreso</div>
+        <div style="aspect-ratio:4/3;background:var(--bg3);border:1px dashed var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.6rem;color:var(--border);">en progreso</div>
+      </div>
+    </div>
+    <div class="modal-body">
+      <p class="modal-desc">Laboratorio en construcción. Simulación de entorno corporativo real con Active Directory, gestión de GPOs y políticas de seguridad. Hardening de sistemas Windows Server y Linux, configuración de DNS, DHCP y análisis forense digital. Disponible próximamente.</p>
+      <div class="modal-tags">
+        <span class="lab-tag yellow">Windows Server</span>
+        <span class="lab-tag yellow">Active Directory</span>
+        <span class="lab-tag yellow">GPOs</span>
+        <span class="lab-tag yellow">Hardening</span>
+        <span class="lab-tag yellow">DNS · DHCP</span>
+        <span class="lab-tag yellow">Forense Digital</span>
+      </div>
+      <div class="modal-links">
+        <a href="https://github.com/kellybarco/Enterprise-Security-Lab" class="lab-link" target="_blank">GitHub ↗</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── LIGHTBOX ─────────────────────────────────────────────── -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<!-- ─── EXPERIENCIA ───────────────────────────────────────────── -->
 <section id="experiencia">
   <div class="container">
     <div class="section-header fade-in">
@@ -325,34 +525,21 @@ footer span{color:var(--green);}
           <div class="exp-role">Técnica de Sistemas y Monitorización de Red</div>
           <div class="exp-company">Normicro S.L. · Leioa, Bizkaia</div>
         </div>
-        <div class="exp-date">Mayo 2023 – Julio 2023 · Prácticas FCT</div>
+        <div class="exp-date">Mayo 2023 – Julio 2023 · Prácticas ASIR (FCT)</div>
       </div>
       <ul class="exp-list">
-        <li><strong>Migración crítica en producción:</strong> Planifiqué y ejecuté la actualización del sistema operativo del servidor de Pandora FMS sin pérdida de datos ni interrupción de servicio. Lo validé todo previamente en entornos virtuales para asegurar el resultado.</li>
-        <li><strong>Auditoría interna:</strong> Desplegué PRTG Network Monitor y Wireshark en paralelo para analizar el tráfico de red y evaluar la viabilidad de implantación a largo plazo.</li>
-        <li><strong>Administración y protocolos:</strong> Configuración de protocolos SNMP y NetFlow, gestión de bases de datos de monitorización, virtualización de entornos y resolución de averías en hardware.</li>
-        <li><strong>Documentación técnica:</strong> Redacté guías paso a paso detalladas para que el equipo pudiera replicar las configuraciones de forma autónoma.</li>
+        <li>Participé en la <strong>migración del entorno de monitorización Pandora FMS,</strong> colaborando en tareas de actualización del sistema y documentación del proceso.</li>
+        <li>Realicé pruebas con <strong>PRTG Network Monitor,</strong> configurando servicios SNMP y NetFlow para evaluar su posible implantación en distintos entornos.</li>
+        <li>Analicé tráfico de red con <strong>Wireshark</strong> para apoyar tareas de diagnóstico y monitorización de infraestructuras TCP/IP.</li>
+        <li>Colaboré en la resolución de incidencias de <strong>sistemas, hardware y entornos virtualizados.</strong></li>
+        <li>Elaboré <strong>documentación técnica y procedimientos</strong> de instalación y configuración para facilitar la transferencia de conocimiento al equipo.</li>
       </ul>
     </div>
 
-    <div class="exp-card soft fade-in">
-      <div class="exp-header">
-        <div>
-          <div class="exp-role">Trayectoria Previa · Habilidades Transferibles</div>
-          <div class="exp-company">Sectores de alta responsabilidad y confianza</div>
-        </div>
-        <div class="exp-date" style="color:var(--muted)">2006 – Actualidad</div>
-      </div>
-      <ul class="exp-list">
-        <li>Más de <strong>11 años</strong> de trayectoria en entornos que exigen organización rigurosa, autonomía total y confianza absoluta. Constancia, lealtad y atención al detalle que traslado directamente a la gestión de sistemas críticos.</li>
-        <li>Capacidad demostrada para <strong>gestionar imprevistos con calma</strong>, priorizar tareas y mantener la estabilidad bajo presión — competencias esenciales en cualquier entorno IT.</li>
-        <li>Formación tecnológica compaginada con trabajo a jornada parcial durante años: <strong>disciplina y compromiso</strong> demostrados con hechos.</li>
-      </ul>
-    </div>
   </div>
 </section>
 
-<!-- HABILIDADES -->
+<!-- ─── HABILIDADES ───────────────────────────────────────────── -->
 <section id="habilidades">
   <div class="container">
     <div class="section-header fade-in">
@@ -361,43 +548,48 @@ footer span{color:var(--green);}
       <div class="sec-line"></div>
     </div>
     <div class="skills-grid">
+
       <div class="skill-cat fade-in">
         <div class="skill-cat-title">// Ciberseguridad Defensiva</div>
         <div class="skill-row"><span class="skill-name">IDS/IPS · Suricata</span><div class="skill-bar-wrap"><div class="skill-bar" data-w="82" style="width:0"></div></div></div>
         <div class="skill-row"><span class="skill-name">SIEM · Wazuh</span><div class="skill-bar-wrap"><div class="skill-bar" data-w="78" style="width:0"></div></div></div>
         <div class="skill-row"><span class="skill-name">Honeypots · Chameleon</span><div class="skill-bar-wrap"><div class="skill-bar" data-w="76" style="width:0"></div></div></div>
-        <div class="skill-row"><span class="skill-name">Firewall · iptables · VPN</span><div class="skill-bar-wrap"><div class="skill-bar" data-w="78" style="width:0"></div></div></div>
-        <div class="skill-row"><span class="skill-name">Kali Linux · Pentesting</span><div class="skill-bar-wrap"><div class="skill-bar" data-w="68" style="width:0"></div></div></div>
+        <div class="skill-row"><span class="skill-name">Firewall · iptables</span><div class="skill-bar-wrap"><div class="skill-bar" data-w="78" style="width:0"></div></div></div>
+        <div class="skill-row"><span class="skill-name">Hardening · Análisis logs</span><div class="skill-bar-wrap"><div class="skill-bar" data-w="72" style="width:0"></div></div></div>
       </div>
+
       <div class="skill-cat fade-in">
         <div class="skill-cat-title">// Sistemas y Virtualización</div>
-        <div class="skill-row"><span class="skill-name">Linux · Ubuntu Server</span><div class="skill-bar-wrap"><div class="skill-bar" data-w="85" style="width:0"></div></div></div>
+        <div class="skill-row"><span class="skill-name">Linux · Ubuntu/Debian/CentOS</span><div class="skill-bar-wrap"><div class="skill-bar" data-w="85" style="width:0"></div></div></div>
         <div class="skill-row"><span class="skill-name">Windows Server · AD · GPO</span><div class="skill-bar-wrap"><div class="skill-bar" data-w="74" style="width:0"></div></div></div>
         <div class="skill-row"><span class="skill-name">VMware · VirtualBox</span><div class="skill-bar-wrap"><div class="skill-bar" data-w="82" style="width:0"></div></div></div>
-        <div class="skill-row"><span class="skill-name">MySQL · MariaDB</span><div class="skill-bar-wrap"><div class="skill-bar" data-w="70" style="width:0"></div></div></div>
-        <div class="skill-row"><span class="skill-name">Java (base estructurada)</span><div class="skill-bar-wrap"><div class="skill-bar" data-w="60" style="width:0"></div></div></div>
+        <div class="skill-row"><span class="skill-name">MySQL · MariaDB · SQL</span><div class="skill-bar-wrap"><div class="skill-bar" data-w="70" style="width:0"></div></div></div>
+        <div class="skill-row"><span class="skill-name">Alta disponibilidad · Clústeres</span><div class="skill-bar-wrap"><div class="skill-bar" data-w="65" style="width:0"></div></div></div>
       </div>
+
       <div class="skill-cat fade-in">
         <div class="skill-cat-title">// Redes y Monitorización</div>
-        <div class="skill-row"><span class="skill-name">TCP/IP · VLANs · Routing</span><div class="skill-bar-wrap"><div class="skill-bar" data-w="80" style="width:0"></div></div></div>
-        <div class="skill-row"><span class="skill-name">DNS · DHCP · Serv. Web</span><div class="skill-bar-wrap"><div class="skill-bar" data-w="78" style="width:0"></div></div></div>
-        <div class="skill-row"><span class="skill-name">Pandora FMS · PRTG</span><div class="skill-bar-wrap"><div class="skill-bar" data-w="72" style="width:0"></div></div></div>
+        <div class="skill-row"><span class="skill-name">TCP/IP · DNS · DHCP · SSH</span><div class="skill-bar-wrap"><div class="skill-bar" data-w="80" style="width:0"></div></div></div>
+        <div class="skill-row"><span class="skill-name">Firewalls · iptables</span><div class="skill-bar-wrap"><div class="skill-bar" data-w="78" style="width:0"></div></div></div>
+        <div class="skill-row"><span class="skill-name">Pandora FMS · PRTG</span><div class="skill-bar-wrap"><div class="skill-bar" data-w="75" style="width:0"></div></div></div>
         <div class="skill-row"><span class="skill-name">Wireshark · SNMP · NetFlow</span><div class="skill-bar-wrap"><div class="skill-bar" data-w="76" style="width:0"></div></div></div>
-        <div class="skill-row"><span class="skill-name">Nmap · Metasploit · Hydra</span><div class="skill-bar-wrap"><div class="skill-bar" data-w="70" style="width:0"></div></div></div>
+        <div class="skill-row"><span class="skill-name">HTTP/S · FTP · Correo</span><div class="skill-bar-wrap"><div class="skill-bar" data-w="70" style="width:0"></div></div></div>
       </div>
+
       <div class="skill-cat fade-in">
         <div class="skill-cat-title">// Scripting y Otras</div>
         <div class="skill-row"><span class="skill-name">Python 3</span><div class="skill-bar-wrap"><div class="skill-bar" data-w="72" style="width:0"></div></div></div>
         <div class="skill-row"><span class="skill-name">Bash · Crontab</span><div class="skill-bar-wrap"><div class="skill-bar" data-w="74" style="width:0"></div></div></div>
         <div class="skill-row"><span class="skill-name">Git · GitHub</span><div class="skill-bar-wrap"><div class="skill-bar" data-w="65" style="width:0"></div></div></div>
+        <div class="skill-row"><span class="skill-name">Documentación técnica</span><div class="skill-bar-wrap"><div class="skill-bar" data-w="88" style="width:0"></div></div></div>
         <div class="skill-row"><span class="skill-name">HTML · Maquetación Web</span><div class="skill-bar-wrap"><div class="skill-bar" data-w="70" style="width:0"></div></div></div>
-        <div class="skill-row"><span class="skill-name">Photoshop · After Effects</span><div class="skill-bar-wrap"><div class="skill-bar" data-w="75" style="width:0"></div></div></div>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- FORMACIÓN -->
+<!-- ─── FORMACIÓN ─────────────────────────────────────────────── -->
 <section id="formacion">
   <div class="container">
     <div class="section-header fade-in">
@@ -406,29 +598,36 @@ footer span{color:var(--green);}
       <div class="sec-line"></div>
     </div>
     <div class="timeline">
+
       <div class="tl-item fade-in">
-        <div class="tl-date">2020 — 2023</div>
+        <div class="tl-date">Septiembre 2020 — Julio 2023</div>
         <div class="tl-title">Técnica Superior en ASIR · Perfil en Ciberseguridad</div>
-        <div class="tl-org">STUCOM Centre d'Estudis / Linkia FP</div>
-        <div class="tl-desc">Titulación oficial de 2.000 horas. Administración de sistemas operativos, planificación de redes, alta disponibilidad, hacking ético, bases de datos y programación en Java. TFG sobre infraestructura de detección y prevención de intrusos.</div>
+        <div class="tl-org">STUCOM Centre d'Estudis / Linkia FP · Barcelona / Online</div>
+        <div class="tl-desc">Titulación oficial de 2.000 horas. Módulos principales: Seguridad y Hacking Ético · Seguridad en Sistemas, Redes y Servicios · Administración de SO · Planificación y Administración de Redes · Cortafuegos y Proxies · Alta Disponibilidad · Gestión de BBDD · Implantación de Aplicaciones Web. Laboratorios prácticos quincenales: Active Directory y GPO · Copias de seguridad · Cortafuegos · Alta disponibilidad y clústeres · Servicios de red (DNS, DHCP, FTP, HTTP/S, correo) · BBDD con SQL.</div>
       </div>
+
       <div class="tl-item fade-in">
         <div class="tl-date">2022</div>
-        <div class="tl-title">Certificado Profesional de Soporte de TI de Google</div>
+        <div class="tl-title">
+          Google IT Support Certificate
+          <a href="https://credly.com/go/ED4VdeTo" target="_blank" class="tl-verify">Verificar ↗</a>
+        </div>
         <div class="tl-org">Coursera / Google</div>
         <div class="tl-desc">Acreditación práctica orientada a protocolos de red, fundamentos de sistemas operativos, resolución metódica de incidencias en IT y atención profesional al usuario.</div>
       </div>
+
       <div class="tl-item fade-in">
         <div class="tl-date">2011</div>
         <div class="tl-title">Curso de Webmaster (225 horas)</div>
         <div class="tl-org">Ceintec</div>
-        <div class="tl-desc">Estructura web, semántica HTML y bases de desarrollo digital. Formación complementaria que aporta visión de maquetación y presentación visual a mi perfil técnico.</div>
+        <div class="tl-desc">Estructura web, semántica HTML y bases de desarrollo digital. Formación complementaria que aporta visión de maquetación y presentación visual al perfil técnico.</div>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- CONTACTO -->
+<!-- ─── CONTACTO ─────────────────────────────────────────────── -->
 <section id="contacto">
   <div class="container">
     <div class="section-header fade-in">
@@ -437,15 +636,15 @@ footer span{color:var(--green);}
       <div class="sec-line"></div>
     </div>
     <div class="contacto-grid">
-      <div class="fade-in">
+      <div class="contacto-text fade-in">
         <h3>¿Hablamos sobre<br><span>una oportunidad?</span></h3>
         <p>Disponible para entrevistas técnicas y procesos de selección en Bizkaia o en remoto. Si buscas a alguien metódica, con ganas y en quien confiar la estabilidad de tus sistemas, escríbeme.</p>
         <div class="contact-links">
-          <a href="www.linkedin.com/in/kelly-b-44963826a" class="contact-link" target="_blank">
-            <span class="contact-link-icon">in</span><span>www.linkedin.com/in/kelly-b-44963826a</span>
+          <a href="https://www.linkedin.com/in/kelly-b-44963826a" class="contact-link" target="_blank">
+            <span class="contact-link-icon">in</span><span>linkedin.com/in/kelly-b-44963826a</span>
           </a>
           <a href="https://github.com/KellyBarco" class="contact-link" target="_blank">
-            <span class="contact-link-icon">⌥</span><span>https://github.com/KellyBarco</span>
+            <span class="contact-link-icon">⌥</span><span>github.com/KellyBarco</span>
           </a>
           <a href="mailto:keyubadu@gmail.com" class="contact-link">
             <span class="contact-link-icon">@</span><span>keyubadu@gmail.com</span>
@@ -460,7 +659,9 @@ footer span{color:var(--green);}
   <p>Desarrollado por <span>Kelly Barco</span> · ASIR Ciberseguridad · Bizkaia</p>
 </footer>
 
+<!-- ─── SCRIPTS ───────────────────────────────────────────────── -->
 <script>
+/* ── Cursor personalizado ── */
 const cursor = document.getElementById('cursor');
 const trail  = document.getElementById('cursorTrail');
 document.addEventListener('mousemove', e => {
@@ -472,36 +673,113 @@ document.addEventListener('mousemove', e => {
   }, 80);
 });
 
+/* ── Typewriter del hero ── */
 const roles = [
-  'Administradora de Sistemas Informaticos en Red',
+  'Administradora de Sistemas Informáticos en Red',
   'Ciberseguridad · Blue Team',
   'Open to Work'
 ];
-let ri=0,ci=0,del=false;
-const el=document.getElementById('typedRole');
+let ri=0, ci=0, del=false;
+const el = document.getElementById('typedRole');
 function type(){
-  const cur=roles[ri];
-  if(!del){el.innerHTML=cur.slice(0,++ci)+'<span class="blink"></span>';if(ci===cur.length){del=true;setTimeout(type,2000);return;}}
-  else{el.innerHTML=cur.slice(0,--ci)+'<span class="blink"></span>';if(ci===0){del=false;ri=(ri+1)%roles.length;}}
-  setTimeout(type,del?38:78);
+  const cur = roles[ri];
+  if(!del){
+    el.innerHTML = cur.slice(0,++ci) + '<span class="blink"></span>';
+    if(ci === cur.length){ del=true; setTimeout(type,2200); return; }
+  } else {
+    el.innerHTML = cur.slice(0,--ci) + '<span class="blink"></span>';
+    if(ci === 0){ del=false; ri=(ri+1)%roles.length; }
+  }
+  setTimeout(type, del ? 36 : 75);
 }
 type();
 
-const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1});
-document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+/* ── Fade-in por scroll ── */
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
 
-const barObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.querySelectorAll('.skill-bar').forEach(b=>{b.style.width=b.dataset.w+'%';});});},{threshold:0.25});
-document.querySelectorAll('.skill-cat').forEach(el=>barObs.observe(el));
+/* ── Barras de habilidades ── */
+const barObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting)
+      e.target.querySelectorAll('.skill-bar')
+              .forEach(b => { b.style.width = b.dataset.w + '%'; });
+  });
+}, { threshold: 0.25 });
+document.querySelectorAll('.skill-cat').forEach(el => barObs.observe(el));
 
-document.querySelectorAll('.filter-btn').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+/* ── Filtros de laboratorios ── */
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    const f=btn.dataset.filter;
-    document.querySelectorAll('.lab-card').forEach(card=>{
-      card.style.display=(f==='all'||card.dataset.cats.includes(f))?'':'none';
+    const f = btn.dataset.filter;
+    document.querySelectorAll('.lab-card').forEach(card => {
+      card.style.display = (f === 'all' || card.dataset.cats.includes(f)) ? '' : 'none';
     });
   });
+});
+
+/* ── Modal de laboratorio ── */
+function openModal(id){
+  const overlay = document.getElementById(id);
+  if(!overlay) return;
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  const box       = overlay.querySelector('.modal-box');
+  const videoUrl  = box.dataset.video;
+  const videoWrap = overlay.querySelector('.modal-video-wrap');
+  if(videoUrl){
+    videoWrap.classList.remove('hidden');
+    videoWrap.innerHTML = `<iframe src="${videoUrl}" allowfullscreen loading="lazy"></iframe>`;
+  } else {
+    videoWrap.classList.add('hidden');
+  }
+}
+
+function closeModal(id){
+  const overlay = document.getElementById(id);
+  if(!overlay) return;
+  overlay.classList.remove('open');
+  document.body.style.overflow = '';
+  const videoWrap = overlay.querySelector('.modal-video-wrap');
+  if(videoWrap) videoWrap.innerHTML = '';
+}
+
+/* Cerrar al hacer clic fuera del modal-box */
+document.querySelectorAll('.modal-overlay').forEach(overlay => {
+  overlay.addEventListener('click', e => {
+    if(e.target === overlay) closeModal(overlay.id);
+  });
+});
+
+/* Cerrar con tecla Escape */
+document.addEventListener('keydown', e => {
+  if(e.key === 'Escape'){
+    document.querySelectorAll('.modal-overlay.open').forEach(o => closeModal(o.id));
+    closeLightbox();
+  }
+});
+
+/* ── Lightbox de galería ── */
+function openLightbox(src, alt){
+  document.getElementById('lightboxImg').src = src;
+  document.getElementById('lightboxImg').alt = alt || '';
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+/* Delegación: clic en imágenes de galería → lightbox */
+document.addEventListener('click', e => {
+  if(e.target.closest('.gallery-grid') && e.target.tagName === 'IMG'){
+    openLightbox(e.target.src, e.target.alt);
+  }
 });
 </script>
 </body>
