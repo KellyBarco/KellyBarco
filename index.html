@@ -19,38 +19,22 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
 body{background:var(--bg);color:var(--text);font-family:var(--sans);overflow-x:hidden;cursor:none;}
-
-/* ─── CURSOR ────────────────────────────────────────────────── */
 .cursor{width:10px;height:10px;background:var(--green);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;box-shadow:0 0 10px var(--green),0 0 25px rgba(0,255,136,.3);}
 .cursor-trail{width:28px;height:28px;border:1px solid rgba(0,255,136,.3);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9998;transition:all .12s ease;}
-
-/* ─── OVERLAYS ──────────────────────────────────────────────── */
 body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.07) 2px,rgba(0,0,0,.07) 4px);pointer-events:none;z-index:1000;}
 body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(0,255,136,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,136,.025) 1px,transparent 1px);background-size:50px 50px;pointer-events:none;z-index:0;}
 
-/* ─── NAV ───────────────────────────────────────────────────── */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:900;
-  padding:.9rem 2rem;
-  display:flex;justify-content:space-between;align-items:center;
-  background:rgba(6,10,15,.97);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid rgba(0,255,136,.18);
-}
+/* ─── NAV ─────────────────────────────────────────────────── */
+nav{position:fixed;top:0;left:0;right:0;z-index:900;padding:.9rem 2rem;display:flex;justify-content:space-between;align-items:center;background:rgba(6,10,15,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,255,136,.18);}
 .nav-logo{font-family:var(--mono);font-size:.82rem;color:var(--green);}
 .nav-logo span{color:var(--muted);}
 .nav-links{display:flex;gap:1.8rem;list-style:none;}
-.nav-links a{
-  font-family:var(--mono);font-size:.7rem;
-  color:#8aaabb;
-  text-decoration:none;letter-spacing:.15em;text-transform:uppercase;
-  transition:color .2s;
-}
+.nav-links a{font-family:var(--mono);font-size:.7rem;color:#8aaabb;text-decoration:none;letter-spacing:.15em;text-transform:uppercase;transition:color .2s;}
 .nav-links a:hover{color:var(--green);}
 .nav-links a::before{content:'> ';color:var(--green);opacity:0;transition:opacity .2s;}
 .nav-links a:hover::before{opacity:1;}
 
-/* ─── LAYOUT BASE ───────────────────────────────────────────── */
+/* ─── LAYOUT ─────────────────────────────────────────────── */
 section{position:relative;z-index:1;}
 .container{max-width:var(--container);margin:0 auto;padding:0 2.5rem;}
 .section-header{display:flex;align-items:center;gap:1.2rem;margin-bottom:2.5rem;}
@@ -58,7 +42,7 @@ section{position:relative;z-index:1;}
 h2{font-family:var(--sans);font-size:clamp(1.7rem,4vw,2.4rem);font-weight:700;color:#fff;letter-spacing:-.02em;}
 .sec-line{flex:1;height:1px;background:linear-gradient(90deg,var(--border),transparent);}
 
-/* ─── HERO ──────────────────────────────────────────────────── */
+/* ─── HERO ─────────────────────────────────────────────────── */
 #hero{min-height:100vh;display:flex;align-items:center;padding:6rem 0 4rem;}
 #hero .container{width:100%;}
 .hero-tag{font-family:var(--mono);font-size:.7rem;color:var(--green);letter-spacing:.2em;text-transform:uppercase;margin-bottom:1.2rem;display:flex;align-items:center;gap:.7rem;}
@@ -81,7 +65,7 @@ h1{font-family:var(--sans);font-size:clamp(2.4rem,7vw,5rem);font-weight:700;line
 .btn-ghost{border:1px solid var(--border);color:var(--text);}
 .btn-ghost:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-2px);}
 
-/* ─── SOBRE MÍ ──────────────────────────────────────────────── */
+/* ─── SOBRE MÍ ─────────────────────────────────────────────── */
 #sobre{padding:6rem 0;border-top:1px solid var(--border);}
 .sobre-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start;}
 .sobre-text p{font-size:1rem;line-height:1.85;color:var(--text);margin-bottom:1.1rem;font-weight:300;}
@@ -91,14 +75,12 @@ h1{font-family:var(--sans);font-size:clamp(2.4rem,7vw,5rem);font-weight:700;line
 .info-label{font-family:var(--mono);font-size:.6rem;color:var(--muted);letter-spacing:.18em;text-transform:uppercase;margin-bottom:.2rem;}
 .info-value{font-family:var(--sans);font-size:.9rem;font-weight:600;color:var(--cyan);}
 
-/* ─── LABORATORIOS ──────────────────────────────────────────── */
+/* ─── LABORATORIOS ─────────────────────────────────────────── */
 #labs{padding:6rem 0;border-top:1px solid var(--border);background:linear-gradient(180deg,transparent,rgba(0,229,255,.015),transparent);}
 .filter-bar{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:2rem;}
 .filter-btn{font-family:var(--mono);font-size:.65rem;padding:.28rem .8rem;border:1px solid var(--border);color:var(--muted);background:transparent;cursor:pointer;letter-spacing:.1em;transition:all .2s;}
 .filter-btn:hover,.filter-btn.active{border-color:var(--green);color:var(--green);background:rgba(0,255,136,.05);}
 .labs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.4rem;}
-
-/* Card base */
 .lab-card{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--green);display:flex;flex-direction:column;transition:transform .2s,border-color .2s,box-shadow .2s;overflow:hidden;}
 .lab-card:hover{transform:translateY(-4px);border-color:rgba(0,255,136,.45);box-shadow:0 8px 32px rgba(0,255,136,.07);}
 .lab-card.wip{border-left-color:var(--yellow);}
@@ -151,7 +133,30 @@ h1{font-family:var(--sans);font-size:clamp(2.4rem,7vw,5rem);font-weight:700;line
 .modal-tags{display:flex;flex-wrap:wrap;gap:.32rem;margin-bottom:1.2rem;}
 .modal-links{display:flex;gap:.5rem;flex-wrap:wrap;}
 
-/* ─── EXPERIENCIA ───────────────────────────────────────────── */
+/* ─── MODAL SECCIONES ─────────────────────────────────────── */
+.modal-section{padding:1.4rem 1.5rem;border-bottom:1px solid var(--border);}
+.modal-section-label{font-family:var(--mono);font-size:.6rem;color:var(--green);letter-spacing:.18em;text-transform:uppercase;margin-bottom:1rem;}
+.modal-portada{width:100%;aspect-ratio:16/9;object-fit:contain;display:block;margin-bottom:1.2rem;border:1px solid var(--border);background:var(--bg3);}
+.modal-video-caption{font-family:var(--mono);font-size:.68rem;color:var(--muted);margin-bottom:.75rem;line-height:1.5;}
+
+/* ─── TECH GRID ──────────────────────────────────────────── */
+.modal-tech-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;}
+.modal-tech-card{
+  background:var(--bg3);border:1px solid var(--border);padding:1.1rem;
+  cursor:pointer;transition:border-color .2s;
+}
+.modal-tech-card:hover{border-color:var(--green);}
+.modal-tech-card img{
+  width:100%;aspect-ratio:16/9;object-fit:contain;
+  display:block;margin-bottom:.8rem;
+  border:1px solid var(--border);background:var(--bg2);
+  pointer-events:none;
+}
+.modal-tech-name{font-family:var(--mono);font-size:.72rem;color:var(--green);margin-bottom:.4rem;letter-spacing:.08em;}
+.modal-tech-desc{font-size:.85rem;color:var(--text);line-height:1.65;font-weight:400;}
+@media(max-width:600px){.modal-tech-grid{grid-template-columns:1fr;}}
+
+/* ─── EXPERIENCIA ─────────────────────────────────────────── */
 #experiencia{padding:6rem 0;border-top:1px solid var(--border);}
 .exp-card{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--cyan);padding:2rem;margin-bottom:1.2rem;}
 .exp-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;flex-wrap:wrap;gap:.5rem;}
@@ -162,51 +167,21 @@ h1{font-family:var(--sans);font-size:clamp(2.4rem,7vw,5rem);font-weight:700;line
 .exp-list li{font-size:.9rem;color:var(--text);font-weight:300;line-height:1.7;display:flex;align-items:flex-start;gap:.6rem;}
 .exp-list li::before{content:'▸';color:var(--green);font-size:.7rem;flex-shrink:0;margin-top:.25rem;}
 
-/* ─── HABILIDADES ───────────────────────────────────────────── */
+/* ─── HABILIDADES ─────────────────────────────────────────── */
 #habilidades{padding:6rem 0;border-top:1px solid var(--border);}
-
-/* Grid principal: 3 columnas en desktop */
-.skills-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:1.1rem;
-}
-
-/* Las dos últimas categorías más pequeñas comparten fila */
-.skills-grid .skill-cat:nth-child(4),
-.skills-grid .skill-cat:nth-child(5),
-.skills-grid .skill-cat:nth-child(6){
-  /* se distribuyen automáticamente en la segunda fila */
-}
-
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;}
 .skill-cat{background:var(--bg2);border:1px solid var(--border);padding:1.3rem;}
-.skill-cat-title{
-  font-family:var(--mono);font-size:.64rem;color:var(--green);
-  letter-spacing:.18em;text-transform:uppercase;
-  margin-bottom:1rem;padding-bottom:.65rem;border-bottom:1px solid var(--border);
-}
-
-/* Nota contextual bajo el título de categoría */
-.skill-cat-note{
-  font-family:var(--mono);font-size:.58rem;color:var(--muted);
-  line-height:1.5;margin-bottom:1rem;margin-top:-.4rem;
-  font-style:italic;
-}
-
+.skill-cat-title{font-family:var(--mono);font-size:.64rem;color:var(--green);letter-spacing:.18em;text-transform:uppercase;margin-bottom:1rem;padding-bottom:.65rem;border-bottom:1px solid var(--border);}
+.skill-cat-note{font-family:var(--mono);font-size:.58rem;color:var(--muted);line-height:1.5;margin-bottom:1rem;margin-top:-.4rem;font-style:italic;}
 .skill-row{display:flex;flex-direction:column;gap:.28rem;margin-bottom:.85rem;}
 .skill-row:last-child{margin-bottom:0;}
-.skill-pct{ display:none; }
+.skill-pct{display:none;}
 .skill-name{font-size:.86rem;font-weight:600;color:var(--text);}
-.skill-pct{font-family:var(--mono);font-size:.58rem;color:var(--muted);}
-
-/* Barra de progreso */
 .skill-bar-wrap{width:100%;height:2px;background:var(--border);}
 .skill-bar{height:100%;background:linear-gradient(90deg,var(--green),var(--cyan));transition:width 1.5s cubic-bezier(.4,0,.2,1);}
-
-/* Nota inline bajo cada skill */
 .skill-note{font-family:var(--mono);font-size:.58rem;color:var(--muted);line-height:1.45;font-style:italic;}
 
-/* ─── FORMACIÓN ─────────────────────────────────────────────── */
+/* ─── FORMACIÓN ───────────────────────────────────────────── */
 #formacion{padding:6rem 0;border-top:1px solid var(--border);background:linear-gradient(180deg,transparent,rgba(0,255,136,.01),transparent);}
 .timeline{position:relative;padding-left:1.8rem;}
 .timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(180deg,var(--green),var(--muted));}
@@ -219,7 +194,7 @@ h1{font-family:var(--sans);font-size:clamp(2.4rem,7vw,5rem);font-weight:700;line
 .tl-verify{font-family:var(--mono);font-size:.62rem;color:var(--green);margin-left:.7rem;border:1px solid rgba(0,255,136,.3);padding:.1rem .45rem;text-decoration:none;vertical-align:middle;transition:all .2s;}
 .tl-verify:hover{background:rgba(0,255,136,.07);border-color:var(--green);}
 
-/* ─── CONTACTO ──────────────────────────────────────────────── */
+/* ─── CONTACTO ────────────────────────────────────────────── */
 #contacto{padding:6rem 0;border-top:1px solid var(--border);}
 .contacto-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start;}
 .contacto-text h3{font-size:1.7rem;font-weight:700;color:#fff;margin-bottom:.9rem;line-height:1.2;}
@@ -230,18 +205,16 @@ h1{font-family:var(--sans);font-size:clamp(2.4rem,7vw,5rem);font-weight:700;line
 .contact-link:hover{border-color:var(--green);color:var(--green);background:rgba(0,255,136,.04);transform:translateX(4px);}
 .contact-link-icon{color:var(--green);font-size:1rem;}
 
-/* ─── FOOTER ────────────────────────────────────────────────── */
+/* ─── FOOTER ──────────────────────────────────────────────── */
 footer{border-top:1px solid var(--border);padding:1.6rem 2rem;text-align:center;font-family:var(--mono);font-size:.66rem;color:var(--muted);position:relative;z-index:1;}
 footer span{color:var(--green);}
 
-/* ─── ANIMACIONES ───────────────────────────────────────────── */
+/* ─── ANIMACIONES ─────────────────────────────────────────── */
 .fade-in{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease;}
 .fade-in.visible{opacity:1;transform:translateY(0);}
 
-/* ─── RESPONSIVE ────────────────────────────────────────────── */
-@media(max-width:900px){
-  .skills-grid{grid-template-columns:repeat(2,1fr);}
-}
+/* ─── RESPONSIVE ──────────────────────────────────────────── */
+@media(max-width:900px){.skills-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:768px){
   .container{padding:0 1.25rem;}
   .sobre-grid,.contacto-grid{grid-template-columns:1fr;gap:2rem;}
@@ -253,31 +226,6 @@ footer span{color:var(--green);}
   .modal-box{margin:0;}
   .gallery-grid{grid-template-columns:repeat(2,1fr);}
 }
-
-/* ─── MODAL SECCIONES ───────────────────────────────────────── */
-.modal-section{padding:1.4rem 1.5rem;border-bottom:1px solid var(--border);}
-.modal-section-label{font-family:var(--mono);font-size:.6rem;color:var(--green);letter-spacing:.18em;text-transform:uppercase;margin-bottom:1rem;}
-.modal-portada{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;margin-bottom:1.2rem;border:1px solid var(--border);}
-.modal-video-caption{font-family:var(--mono);font-size:.68rem;color:var(--muted);margin-bottom:.75rem;line-height:1.5;}
-
-.modal-tech-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;}
-.modal-tech-card{background:var(--bg3);border:1px solid var(--border);padding:.9rem;}
-
-/* Imagen de portada — que no se corte */
-.modal-portada{width:100%;aspect-ratio:16/9;object-fit:contain;display:block;margin-bottom:1.2rem;border:1px solid var(--border);background:var(--bg3);}
-
-/* Cards de tecnología — más grandes y texto visible */
-.modal-tech-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;}
-.modal-tech-card{background:var(--bg3);border:1px solid var(--border);padding:1.1rem;cursor:pointer;transition:border-color .2s;}
-.modal-tech-card:hover{border-color:var(--green);}
-.modal-tech-card img{width:100%;aspect-ratio:16/9;object-fit:contain;display:block;margin-bottom:.8rem;border:1px solid var(--border);background:var(--bg2);}
-.modal-tech-name{font-family:var(--mono);font-size:.72rem;color:var(--green);margin-bottom:.4rem;letter-spacing:.08em;}
-.modal-tech-desc{font-size:.85rem;color:var(--text);line-height:1.65;font-weight:400;}
-
-@media(max-width:600px){.modal-tech-grid{grid-template-columns:1fr;}}
-
-@media(max-width:600px){.modal-tech-grid{grid-template-columns:repeat(2,1fr);}}
-
 </style>
 </head>
 <body>
@@ -368,74 +316,25 @@ footer span{color:var(--green);}
       <button class="filter-btn" data-filter="scripting">Scripting</button>
     </div>
     <div class="labs-grid" id="labsGrid">
-
-      <!-- ── LAB 01 · TFG ── -->
       <div class="lab-card fade-in" data-cats="ciberseguridad redes scripting sistemas">
-        <div class="lab-cover-placeholder">[ PORTADA LAB 01 ]</div>
+        <img class="lab-cover" src="Labs/lab01/portada_principal.png" alt="Lab 01 IDS/SIEM">
         <div class="lab-body">
           <div class="lab-status">// LAB 01 · COMPLETADO · TFG ASIR</div>
           <div class="lab-title">Sistema de Detección, Monitorización y Prevención de Intrusos</div>
-          <div class="lab-desc">Cuatro máquinas virtuales interconectadas forman una infraestructura defensiva completa: honeypot Chameleon como señuelo, Suricata detectando anomalías y ataques, Wazuh centralizando alertas, y automatización Python + iptables bloqueando IPs en tiempo real. Validado con Kali Linux, Metasploit e Hydra.</div>
+          <div class="lab-desc">Infraestructura defensiva completa sobre 4 máquinas virtuales: honeypot como señuelo, IDS detectando ataques, SIEM centralizando alertas y bloqueo automático de IPs con Python. Validado con ataques reales usando Kali Linux.</div>
           <div class="lab-tags">
             <span class="lab-tag">Honeypot Chameleon</span>
             <span class="lab-tag">Suricata IDS/IPS</span>
             <span class="lab-tag">Wazuh SIEM</span>
             <span class="lab-tag">iptables</span>
             <span class="lab-tag">Python</span>
-            <span class="lab-tag">Bash</span>
             <span class="lab-tag">Kali Linux</span>
-            <span class="lab-tag">MITRE ATT&amp;CK</span>
           </div>
           <div class="lab-links">
             <button class="lab-link media" onclick="openModal('modal-lab01')">Ver lab ▶</button>
           </div>
         </div>
       </div>
-
-      <!-- ── LAB 02 · EN PROGRESO ── -->
-      <!--
-      <div class="lab-card wip fade-in" data-cats="sistemas redes">
-        <div class="lab-cover-placeholder">[ PORTADA LAB 02 ]</div>
-        <div class="lab-body">
-          <div class="lab-status">// LAB 02 · EN PROGRESO 🛠</div>
-          <div class="lab-title">Enterprise Security &amp; Systems Range Lab</div>
-          <div class="lab-desc">Simulación de entorno corporativo real. Active Directory con usuarios, GPOs y políticas de seguridad. Hardening de sistemas Windows y Linux, gestión de vulnerabilidades y análisis forense digital.</div>
-          <div class="lab-tags">
-            <span class="lab-tag yellow">Windows Server</span>
-            <span class="lab-tag yellow">Active Directory</span>
-            <span class="lab-tag yellow">GPOs</span>
-            <span class="lab-tag yellow">Hardening</span>
-            <span class="lab-tag yellow">DNS · DHCP</span>
-            <span class="lab-tag yellow">Forense Digital</span>
-          </div>
-          <div class="lab-links">
-            <a href="https://github.com/kellybarco/Enterprise-Security-Lab" class="lab-link" target="_blank">GitHub ↗</a>
-            <button class="lab-link media" onclick="openModal('modal-lab02')">Ver lab ▶</button>
-          </div>
-        </div>
-      </div>
-      -->
-      <!-- ── PRÓXIMAMENTE ── -->
-      <!--
-      <div class="lab-card soon fade-in" data-cats="">
-        <div class="lab-cover-placeholder">[ PRÓXIMAMENTE ]</div>
-        <div class="lab-body">
-          <div class="lab-status">// LAB 03 · PRÓXIMAMENTE</div>
-          <div class="lab-title">Próximo laboratorio</div>
-          <div class="lab-desc">Nuevas áreas en progreso. Vuelve pronto.</div>
-        </div>
-      </div>
-      -->
-      <!--
-      <div class="lab-card soon fade-in" data-cats="">
-        <div class="lab-cover-placeholder">[ PRÓXIMAMENTE ]</div>
-        <div class="lab-body">
-          <div class="lab-status">// LAB 04 · PRÓXIMAMENTE</div>
-          <div class="lab-title">Próximo laboratorio</div>
-          <div class="lab-desc">Este portfolio crece con cada nuevo reto.</div>
-        </div>
-      </div>
-      -->
     </div>
   </div>
 </section>
@@ -445,59 +344,59 @@ footer span{color:var(--green);}
   <div class="modal-box">
     <button class="modal-close" onclick="closeModal('modal-lab01')">✕ cerrar</button>
 
-    <!-- CABECERA -->
     <div class="modal-header">
       <div class="modal-status">// LAB 01 · COMPLETADO · TFG ASIR</div>
       <div class="modal-title">Sistema de Detección, Monitorización y Prevención de Intrusos</div>
     </div>
 
-    <!-- PORTADA + INTRODUCCIÓN -->
+    <!-- INTRODUCCIÓN -->
     <div class="modal-section">
       <div class="modal-section-label">// Introducción</div>
       <img src="Labs/lab01/portada.jpeg" alt="Arquitectura del laboratorio" class="modal-portada">
       <p class="modal-desc">Diseñé e implementé este laboratorio como Proyecto Final de Grado. Cuatro máquinas virtuales interconectadas forman una infraestructura defensiva completa: el honeypot Chameleon actúa como señuelo sobre servicios simulados, Suricata detecta escaneos, intentos de fuerza bruta y anomalías con reglas ajustadas durante las pruebas, y Wazuh centraliza y correlaciona todos los eventos de seguridad. Un script Python automatiza la respuesta bloqueando IPs via iptables, reduciendo la intervención manual. Todo validado con ataques reales usando Kali Linux, Metasploit e Hydra, mapeando los TTPs al framework MITRE ATT&CK.</p>
     </div>
 
-    <!-- TECNOLOGÍAS -->
+    <!-- TECNOLOGÍAS — onclick en la card exterior, sin divs anidados -->
     <div class="modal-section">
       <div class="modal-section-label">// Tecnologías Utilizadas</div>
       <div class="modal-tech-grid">
 
-        <div class="modal-tech-card">
+        <div class="modal-tech-card" onclick="openLightbox('Labs/lab01/tech-chameleon.jpeg','Honeypot Chameleon')">
           <img src="Labs/lab01/tech-chameleon.jpeg" alt="Honeypot Chameleon">
           <div class="modal-tech-name">Honeypot Chameleon</div>
           <div class="modal-tech-desc">Señuelo desplegado sobre servicios simulados SSH y FTP para atraer y registrar intentos de intrusión.</div>
         </div>
 
-        <div class="modal-tech-card">
+        <div class="modal-tech-card" onclick="openLightbox('Labs/lab01/tech-suricata.png','Suricata IDS')">
           <img src="Labs/lab01/tech-suricata.png" alt="Suricata IDS">
           <div class="modal-tech-name">Suricata IDS</div>
           <div class="modal-tech-desc">Sistema de detección de intrusos configurado con reglas personalizadas para detectar escaneos, fuerza bruta y anomalías de tráfico.</div>
         </div>
 
-        <div class="modal-tech-card">
+        <div class="modal-tech-card" onclick="openLightbox('Labs/lab01/tech-wazuh.png','Wazuh SIEM')">
           <img src="Labs/lab01/tech-wazuh.png" alt="Wazuh SIEM">
           <div class="modal-tech-name">Wazuh SIEM</div>
           <div class="modal-tech-desc">Plataforma central que recibe, correlaciona y visualiza todos los eventos de seguridad del laboratorio.</div>
         </div>
 
-        <div class="modal-tech-card">
+        <div class="modal-tech-card" onclick="openLightbox('Labs/lab01/tech-iptables.png','iptables')">
           <img src="Labs/lab01/tech-iptables.png" alt="iptables">
           <div class="modal-tech-name">iptables</div>
           <div class="modal-tech-desc">Firewall basado en reglas que ejecuta el bloqueo automático de IPs atacantes a partir de los logs del IDS.</div>
         </div>
 
-        <div class="modal-tech-card">
-          <img src="Labs/lab01/tech-python.jpeg" alt="Python">
+        <div class="modal-tech-card" onclick="openLightbox('Labs/lab01/tech-python.jpeg','Python + Bash')">
+          <img src="Labs/lab01/tech-python.jpeg" alt="Python + Bash">
           <div class="modal-tech-name">Python + Bash</div>
           <div class="modal-tech-desc">Scripts de automatización que extraen IPs del log de Suricata y ejecutan el bloqueo via iptables. Programados con crontab.</div>
         </div>
 
-        <div class="modal-tech-card">
+        <div class="modal-tech-card" onclick="openLightbox('Labs/lab01/tech-kali.jpeg','Kali Linux')">
           <img src="Labs/lab01/tech-kali.jpeg" alt="Kali Linux">
           <div class="modal-tech-name">Kali Linux</div>
           <div class="modal-tech-desc">Máquina atacante usada para validar el sistema con Metasploit, Hydra y Nmap simulando ataques reales.</div>
         </div>
+
       </div>
     </div>
 
@@ -513,12 +412,10 @@ footer span{color:var(--green);}
     <!-- VÍDEOS 2 y 3 — ATAQUES -->
     <div class="modal-section">
       <div class="modal-section-label">// Simulación de Ataques</div>
-
       <p class="modal-video-caption">Ataque SSH — escaneo de puertos y fuerza bruta con Metasploit.</p>
       <div class="modal-video-wrap">
         <iframe src="https://www.youtube.com/embed/TU_ID_VIDEO_2" allowfullscreen loading="lazy"></iframe>
       </div>
-
       <p class="modal-video-caption" style="margin-top:1.5rem;">Ataque FTP — escaneo de puertos y fuerza bruta con Hydra.</p>
       <div class="modal-video-wrap">
         <iframe src="https://www.youtube.com/embed/TU_ID_VIDEO_3" allowfullscreen loading="lazy"></iframe>
@@ -564,41 +461,7 @@ footer span{color:var(--green);}
   </div>
 </div>
 
-<!-- ─── MODAL LAB 02 ── -->
-
-<div class="modal-overlay" id="modal-lab02">
-  <div class="modal-box" data-video="">
-    <button class="modal-close" onclick="closeModal('modal-lab02')">✕ cerrar</button>
-    <div class="modal-header">
-      <div class="modal-status">// LAB 02 · EN PROGRESO 🛠</div>
-      <div class="modal-title">Enterprise Security &amp; Systems Range Lab</div>
-    </div>
-    <div class="modal-video-wrap hidden" id="modal-lab02-video"></div>
-    <div class="modal-gallery">
-      <div class="modal-gallery-label">// Capturas del laboratorio</div>
-      <div class="gallery-grid">
-        <div style="aspect-ratio:4/3;background:var(--bg3);border:1px dashed var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.6rem;color:var(--border);">en progreso</div>
-        <div style="aspect-ratio:4/3;background:var(--bg3);border:1px dashed var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.6rem;color:var(--border);">en progreso</div>
-      </div>
-    </div>
-    <div class="modal-body">
-      <p class="modal-desc">Laboratorio en construcción. Simulación de entorno corporativo real con Active Directory, gestión de GPOs y políticas de seguridad. Hardening de sistemas Windows Server y Linux, configuración de DNS, DHCP y análisis forense digital. Disponible próximamente.</p>
-      <div class="modal-tags">
-        <span class="lab-tag yellow">Windows Server</span>
-        <span class="lab-tag yellow">Active Directory</span>
-        <span class="lab-tag yellow">GPOs</span>
-        <span class="lab-tag yellow">Hardening</span>
-        <span class="lab-tag yellow">DNS · DHCP</span>
-        <span class="lab-tag yellow">Forense Digital</span>
-      </div>
-      <div class="modal-links">
-        <a href="https://github.com/kellybarco/Enterprise-Security-Lab" class="lab-link" target="_blank">GitHub ↗</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ─── LIGHTBOX ── -->
+<!-- ─── LIGHTBOX ─────────────────────────────────────────────── -->
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
   <button class="lightbox-close" onclick="closeLightbox()">✕</button>
   <img id="lightboxImg" src="" alt="">
@@ -613,20 +476,20 @@ footer span{color:var(--green);}
       <div class="sec-line"></div>
     </div>
     <div class="exp-card fade-in">
-  <div class="exp-header">
-    <div>
-      <div class="exp-role">Técnica de Sistemas y Monitorización · Prácticas ASIR (FCT)</div>
-      <div class="exp-company">Normicro S.L. · Leioa, Bizkaia</div>
+      <div class="exp-header">
+        <div>
+          <div class="exp-role">Técnica de Sistemas y Monitorización · Prácticas ASIR (FCT)</div>
+          <div class="exp-company">Normicro S.L. · Leioa, Bizkaia</div>
+        </div>
+        <div class="exp-date">Mayo 2023 – Julio 2023</div>
+      </div>
+      <ul class="exp-list" style="gap:.3rem;">
+        <li>Migré el servidor Pandora FMS completo — sistema operativo y base de datos incluidos — manteniendo el servicio activo durante todo el proceso y sin pérdida de datos.</li>
+        <li>Desplegué PRTG Network Monitor con SNMP y NetFlow para monitorización de tráfico TCP/IP, y evalué Wireshark como herramienta complementaria, documentando la viabilidad de ambas para su implantación en la empresa.</li>
+        <li>Participé en el diagnóstico y resolución de averías en sistemas, hardware y entornos virtualizados, incluyendo intervenciones en cliente junto a técnico senior.</li>
+        <li>Redacté guías técnicas de instalación y configuración para que el equipo pudiera replicar cada proceso de forma autónoma.</li>
+      </ul>
     </div>
-    <div class="exp-date">Mayo 2023 – Julio 2023</div>
-  </div>
-  <ul class="exp-list" style="gap:.3rem;">
-    <li>Migré el servidor Pandora FMS completo — sistema operativo y base de datos incluidos — manteniendo el servicio activo durante todo el proceso y sin pérdida de datos.</li>
-    <li>Desplegué PRTG Network Monitor con SNMP y NetFlow para monitorización de tráfico TCP/IP, y evalué Wireshark como herramienta complementaria, documentando la viabilidad de ambas para su implantación en la empresa.</li>
-    <li>Participé en el diagnóstico y resolución de averías en sistemas, hardware y entornos virtualizados, incluyendo intervenciones en cliente junto a técnico senior.</li>
-    <li>Redacté guías técnicas de instalación y configuración para que el equipo pudiera replicar cada proceso de forma autónoma.</li>
-  </ul>
-</div>
   </div>
 </section>
 
@@ -638,10 +501,8 @@ footer span{color:var(--green);}
       <h2>Habilidades</h2>
       <div class="sec-line"></div>
     </div>
-
     <div class="skills-grid">
 
-      <!-- ── Sistemas y virtualización ── -->
       <div class="skill-cat fade-in">
         <div class="skill-cat-title">// Sistemas y Virtualización</div>
         <div class="skill-row">
@@ -671,7 +532,6 @@ footer span{color:var(--green);}
         </div>
       </div>
 
-      <!-- ── Redes y protocolos ── -->
       <div class="skill-cat fade-in">
         <div class="skill-cat-title">// Redes y Protocolos</div>
         <div class="skill-row">
@@ -696,7 +556,6 @@ footer span{color:var(--green);}
         </div>
       </div>
 
-      <!-- ── Seguridad defensiva ── -->
       <div class="skill-cat fade-in">
         <div class="skill-cat-title">// Seguridad Defensiva</div>
         <div class="skill-row">
@@ -731,7 +590,6 @@ footer span{color:var(--green);}
         </div>
       </div>
 
-      <!-- ── Monitorización ── -->
       <div class="skill-cat fade-in">
         <div class="skill-cat-title">// Monitorización</div>
         <div class="skill-row">
@@ -746,7 +604,6 @@ footer span{color:var(--green);}
         </div>
       </div>
 
-      <!-- ── Scripting y automatización ── -->
       <div class="skill-cat fade-in">
         <div class="skill-cat-title">// Scripting y Automatización</div>
         <div class="skill-row">
@@ -766,7 +623,6 @@ footer span{color:var(--green);}
         </div>
       </div>
 
-      <!-- ── Documentación ── -->
       <div class="skill-cat fade-in">
         <div class="skill-cat-title">// Documentación Técnica</div>
         <div class="skill-cat-note">Uno de los puntos más fuertes y diferenciadores del perfil</div>
@@ -808,9 +664,8 @@ footer span{color:var(--green);}
         <div class="tl-desc">Certificación de 6 cursos sobre fundamentos de redes TCP/IP, sistemas operativos (Linux y Windows), seguridad informática básica y resolución metódica de incidencias en IT.</div>
       </div>
 
-      <!-- Separador formación complementaria -->
       <div class="tl-item fade-in" style="padding-bottom:1.2rem;">
-        <div style="font-family:var(--mono);font-size:.64rem;color:var(--green);letter-spacing:.18em;text-transform:uppercase;padding:.5rem 0 .5rem 0;border-top:1px solid var(--border);margin-top:.4rem;">// Formación Complementaria</div>
+        <div style="font-family:var(--mono);font-size:.64rem;color:var(--green);letter-spacing:.18em;text-transform:uppercase;padding:.5rem 0;border-top:1px solid var(--border);margin-top:.4rem;">// Formación Complementaria</div>
       </div>
 
       <div class="tl-item fade-in">
@@ -865,7 +720,6 @@ footer span{color:var(--green);}
 
 <!-- ─── SCRIPTS ───────────────────────────────────────────────── -->
 <script>
-/* ── Cursor personalizado ── */
 const cursor = document.getElementById('cursor');
 const trail  = document.getElementById('cursorTrail');
 document.addEventListener('mousemove', e => {
@@ -877,7 +731,6 @@ document.addEventListener('mousemove', e => {
   }, 80);
 });
 
-/* ── Typewriter del hero ── */
 const roles = [
   'Administradora de Sistemas Informáticos en Red',
   'Ciberseguridad · Blue Team',
@@ -898,13 +751,11 @@ function type(){
 }
 type();
 
-/* ── Fade-in por scroll ── */
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.1 });
 document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
 
-/* ── Barras de habilidades ── */
 const barObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if(e.isIntersecting)
@@ -914,7 +765,6 @@ const barObs = new IntersectionObserver(entries => {
 }, { threshold: 0.25 });
 document.querySelectorAll('.skill-cat').forEach(el => barObs.observe(el));
 
-/* ── Filtros de laboratorios ── */
 document.querySelectorAll('.filter-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -926,21 +776,11 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
   });
 });
 
-/* ── Modal de laboratorio ── */
 function openModal(id){
   const overlay = document.getElementById(id);
   if(!overlay) return;
   overlay.classList.add('open');
   document.body.style.overflow = 'hidden';
-  const box       = overlay.querySelector('.modal-box');
-  const videoUrl  = box.dataset.video;
-  const videoWrap = overlay.querySelector('.modal-video-wrap');
-  if(videoUrl){
-    videoWrap.classList.remove('hidden');
-    videoWrap.innerHTML = `<iframe src="${videoUrl}" allowfullscreen loading="lazy"></iframe>`;
-  } else {
-    videoWrap.classList.add('hidden');
-  }
 }
 
 function closeModal(id){
@@ -948,18 +788,14 @@ function closeModal(id){
   if(!overlay) return;
   overlay.classList.remove('open');
   document.body.style.overflow = '';
-  const videoWrap = overlay.querySelector('.modal-video-wrap');
-  if(videoWrap) videoWrap.innerHTML = '';
 }
 
-/* Cerrar al hacer clic fuera del modal-box */
 document.querySelectorAll('.modal-overlay').forEach(overlay => {
   overlay.addEventListener('click', e => {
     if(e.target === overlay) closeModal(overlay.id);
   });
 });
 
-/* Cerrar con tecla Escape */
 document.addEventListener('keydown', e => {
   if(e.key === 'Escape'){
     document.querySelectorAll('.modal-overlay.open').forEach(o => closeModal(o.id));
@@ -967,7 +803,6 @@ document.addEventListener('keydown', e => {
   }
 });
 
-/* ── Lightbox de galería ── */
 function openLightbox(src, alt){
   document.getElementById('lightboxImg').src = src;
   document.getElementById('lightboxImg').alt = alt || '';
@@ -979,7 +814,6 @@ function closeLightbox(){
   document.body.style.overflow = '';
 }
 
-/* Delegación: clic en imágenes de galería → lightbox */
 document.addEventListener('click', e => {
   if(e.target.closest('.gallery-grid') && e.target.tagName === 'IMG'){
     openLightbox(e.target.src, e.target.alt);
