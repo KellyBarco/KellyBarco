@@ -253,6 +253,22 @@ footer span{color:var(--green);}
   .modal-box{margin:0;}
   .gallery-grid{grid-template-columns:repeat(2,1fr);}
 }
+
+/* ─── MODAL SECCIONES ───────────────────────────────────────── */
+.modal-section{padding:1.4rem 1.5rem;border-bottom:1px solid var(--border);}
+.modal-section-label{font-family:var(--mono);font-size:.6rem;color:var(--green);letter-spacing:.18em;text-transform:uppercase;margin-bottom:1rem;}
+.modal-portada{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;margin-bottom:1.2rem;border:1px solid var(--border);}
+.modal-video-caption{font-family:var(--mono);font-size:.68rem;color:var(--muted);margin-bottom:.75rem;line-height:1.5;}
+
+.modal-tech-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;}
+.modal-tech-card{background:var(--bg3);border:1px solid var(--border);padding:.9rem;}
+.modal-tech-card img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;margin-bottom:.7rem;border:1px solid var(--border);}
+.modal-tech-name{font-family:var(--mono);font-size:.68rem;color:var(--green);margin-bottom:.35rem;letter-spacing:.08em;}
+.modal-tech-desc{font-size:.8rem;color:var(--muted);line-height:1.6;font-weight:300;}
+
+@media(max-width:600px){.modal-tech-grid{grid-template-columns:repeat(2,1fr);}}
+
+</style>
 </style>
 </head>
 <body>
@@ -362,7 +378,6 @@ footer span{color:var(--green);}
             <span class="lab-tag">MITRE ATT&amp;CK</span>
           </div>
           <div class="lab-links">
-            <a href="https://github.com/kellybarco/Proyecto-Final-ASIR-Deteccion-Intrusos" class="lab-link" target="_blank">GitHub ↗</a>
             <button class="lab-link media" onclick="openModal('modal-lab01')">Ver lab ▶</button>
           </div>
         </div>
@@ -416,26 +431,112 @@ footer span{color:var(--green);}
   </div>
 </section>
 
-<!-- ─── MODAL LAB 01 ── -->
+<!-- ─── MODAL LAB 01 ──────────────────────────────────────────── -->
 <div class="modal-overlay" id="modal-lab01">
-  <div class="modal-box" data-video="">
+  <div class="modal-box">
     <button class="modal-close" onclick="closeModal('modal-lab01')">✕ cerrar</button>
+
+    <!-- CABECERA -->
     <div class="modal-header">
       <div class="modal-status">// LAB 01 · COMPLETADO · TFG ASIR</div>
       <div class="modal-title">Sistema de Detección, Monitorización y Prevención de Intrusos</div>
     </div>
-    <div class="modal-video-wrap hidden" id="modal-lab01-video"></div>
-    <div class="modal-gallery">
-      <div class="modal-gallery-label">// Capturas del laboratorio</div>
-      <div class="gallery-grid">
-        <div style="aspect-ratio:4/3;background:var(--bg3);border:1px dashed var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.6rem;color:var(--border);">foto 01</div>
-        <div style="aspect-ratio:4/3;background:var(--bg3);border:1px dashed var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.6rem;color:var(--border);">foto 02</div>
-        <div style="aspect-ratio:4/3;background:var(--bg3);border:1px dashed var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.6rem;color:var(--border);">foto 03</div>
-        <div style="aspect-ratio:4/3;background:var(--bg3);border:1px dashed var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.6rem;color:var(--border);">foto 04</div>
+
+    <!-- PORTADA + INTRODUCCIÓN -->
+    <div class="modal-section">
+      <div class="modal-section-label">// Introducción</div>
+      <img src="Labs/lab01/portada.jpg" alt="Arquitectura del laboratorio" class="modal-portada">
+      <p class="modal-desc">Diseñé e implementé este laboratorio como Proyecto Final de Grado. Cuatro máquinas virtuales interconectadas forman una infraestructura defensiva completa: el honeypot Chameleon actúa como señuelo sobre servicios simulados, Suricata detecta escaneos, intentos de fuerza bruta y anomalías con reglas ajustadas durante las pruebas, y Wazuh centraliza y correlaciona todos los eventos de seguridad. Un script Python automatiza la respuesta bloqueando IPs via iptables, reduciendo la intervención manual. Todo validado con ataques reales usando Kali Linux, Metasploit e Hydra, mapeando los TTPs al framework MITRE ATT&CK.</p>
+    </div>
+
+    <!-- TECNOLOGÍAS -->
+    <div class="modal-section">
+      <div class="modal-section-label">// Tecnologías Utilizadas</div>
+      <div class="modal-tech-grid">
+
+        <div class="modal-tech-card">
+          <img src="Labs/lab01/tech-chameleon.jpg" alt="Honeypot Chameleon">
+          <div class="modal-tech-name">Honeypot Chameleon</div>
+          <div class="modal-tech-desc">Señuelo desplegado sobre servicios simulados SSH y FTP para atraer y registrar intentos de intrusión.</div>
+        </div>
+
+        <div class="modal-tech-card">
+          <img src="Labs/lab01/tech-suricata.jpg" alt="Suricata IDS">
+          <div class="modal-tech-name">Suricata IDS</div>
+          <div class="modal-tech-desc">Sistema de detección de intrusos configurado con reglas personalizadas para detectar escaneos, fuerza bruta y anomalías de tráfico.</div>
+        </div>
+
+        <div class="modal-tech-card">
+          <img src="Labs/lab01/tech-wazuh.jpg" alt="Wazuh SIEM">
+          <div class="modal-tech-name">Wazuh SIEM</div>
+          <div class="modal-tech-desc">Plataforma central que recibe, correlaciona y visualiza todos los eventos de seguridad del laboratorio.</div>
+        </div>
+
+        <div class="modal-tech-card">
+          <img src="Labs/lab01/tech-iptables.jpg" alt="iptables">
+          <div class="modal-tech-name">iptables</div>
+          <div class="modal-tech-desc">Firewall basado en reglas que ejecuta el bloqueo automático de IPs atacantes a partir de los logs del IDS.</div>
+        </div>
+
+        <div class="modal-tech-card">
+          <img src="Labs/lab01/tech-python.jpg" alt="Python">
+          <div class="modal-tech-name">Python + Bash</div>
+          <div class="modal-tech-desc">Scripts de automatización que extraen IPs del log de Suricata y ejecutan el bloqueo via iptables. Programados con crontab.</div>
+        </div>
+
+        <div class="modal-tech-card">
+          <img src="Labs/lab01/tech-kali.jpg" alt="Kali Linux">
+          <div class="modal-tech-name">Kali Linux</div>
+          <div class="modal-tech-desc">Máquina atacante usada para validar el sistema con Metasploit, Hydra y Nmap simulando ataques reales.</div>
+        </div>
+
       </div>
     </div>
+
+    <!-- VÍDEO 1 — INSTALACIÓN -->
+    <div class="modal-section">
+      <div class="modal-section-label">// Instalación y Configuración</div>
+      <p class="modal-video-caption">Despliegue completo de las 4 máquinas virtuales: Honeypot Chameleon, Suricata, Wazuh e iptables.</p>
+      <div class="modal-video-wrap">
+        <iframe src="https://www.youtube.com/embed/TU_ID_VIDEO_1" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <!-- VÍDEOS 2 y 3 — ATAQUES -->
+    <div class="modal-section">
+      <div class="modal-section-label">// Simulación de Ataques</div>
+
+      <p class="modal-video-caption">Ataque SSH — escaneo de puertos y fuerza bruta con Metasploit.</p>
+      <div class="modal-video-wrap">
+        <iframe src="https://www.youtube.com/embed/TU_ID_VIDEO_2" allowfullscreen loading="lazy"></iframe>
+      </div>
+
+      <p class="modal-video-caption" style="margin-top:1.5rem;">Ataque FTP — escaneo de puertos y fuerza bruta con Hydra.</p>
+      <div class="modal-video-wrap">
+        <iframe src="https://www.youtube.com/embed/TU_ID_VIDEO_3" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <!-- VÍDEO 4 — RESULTADOS -->
+    <div class="modal-section">
+      <div class="modal-section-label">// Resultados y Detección</div>
+      <p class="modal-video-caption">Recorrido por los dashboards: alertas en Wazuh, eventos en Suricata, registros del Honeypot y mapeo MITRE ATT&CK.</p>
+      <div class="modal-video-wrap">
+        <iframe src="https://www.youtube.com/embed/TU_ID_VIDEO_4" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <!-- VÍDEO 5 — RESPUESTA AUTOMÁTICA -->
+    <div class="modal-section">
+      <div class="modal-section-label">// Respuesta Automática</div>
+      <p class="modal-video-caption">Scripts Python y Bash extrayendo IPs del log de Suricata y bloqueándolas automáticamente con iptables vía crontab.</p>
+      <div class="modal-video-wrap">
+        <iframe src="https://www.youtube.com/embed/TU_ID_VIDEO_5" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <!-- TAGS -->
     <div class="modal-body">
-      <p class="modal-desc">Diseñé e implementé este laboratorio como Proyecto Final de Grado. Cuatro máquinas virtuales interconectadas forman una infraestructura defensiva completa: el honeypot Chameleon actúa como señuelo sobre servicios simulados, Suricata detecta escaneos, intentos de fuerza bruta y anomalías con reglas ajustadas durante las pruebas, y Wazuh centraliza y correlaciona todos los eventos de seguridad. Un script Python automatiza la respuesta bloqueando IPs via iptables, reduciendo la intervención manual. Todo el proceso fue validado con ataques reales usando Kali Linux, Metasploit e Hydra, mapeando los TTPs al framework MITRE ATT&CK. La arquitectura, configuraciones y procedimientos están documentados paso a paso para que sea reproducible desde cero.</p>
       <div class="modal-tags">
         <span class="lab-tag">Honeypot Chameleon</span>
         <span class="lab-tag">Suricata IDS/IPS</span>
@@ -450,10 +551,8 @@ footer span{color:var(--green);}
         <span class="lab-tag">MITRE ATT&amp;CK</span>
         <span class="lab-tag">VirtualBox</span>
       </div>
-      <div class="modal-links">
-        <a href="https://github.com/kellybarco/Proyecto-Final-ASIR-Deteccion-Intrusos" class="lab-link" target="_blank">GitHub ↗</a>
-      </div>
     </div>
+
   </div>
 </div>
 
