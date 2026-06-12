@@ -445,7 +445,7 @@ footer span{color:var(--green);}
     <!-- PORTADA + INTRODUCCIÓN -->
     <div class="modal-section">
       <div class="modal-section-label">// Introducción</div>
-      <img src="Labs/lab01/portada.jpg" alt="Arquitectura del laboratorio" class="modal-portada">
+      <img src="Labs/lab01/portada.jpeg" alt="Arquitectura del laboratorio" class="modal-portada">
       <p class="modal-desc">Diseñé e implementé este laboratorio como Proyecto Final de Grado. Cuatro máquinas virtuales interconectadas forman una infraestructura defensiva completa: el honeypot Chameleon actúa como señuelo sobre servicios simulados, Suricata detecta escaneos, intentos de fuerza bruta y anomalías con reglas ajustadas durante las pruebas, y Wazuh centraliza y correlaciona todos los eventos de seguridad. Un script Python automatiza la respuesta bloqueando IPs via iptables, reduciendo la intervención manual. Todo validado con ataques reales usando Kali Linux, Metasploit e Hydra, mapeando los TTPs al framework MITRE ATT&CK.</p>
     </div>
 
@@ -455,38 +455,38 @@ footer span{color:var(--green);}
       <div class="modal-tech-grid">
 
         <div class="modal-tech-card">
-          <img src="Labs/lab01/tech-chameleon.jpg" alt="Honeypot Chameleon">
+          <img src="Labs/lab01/tech-chameleon.jpeg" alt="Honeypot Chameleon">
           <div class="modal-tech-name">Honeypot Chameleon</div>
           <div class="modal-tech-desc">Señuelo desplegado sobre servicios simulados SSH y FTP para atraer y registrar intentos de intrusión.</div>
         </div>
 
         <div class="modal-tech-card">
-          <img src="Labs/lab01/tech-suricata.jpg" alt="Suricata IDS">
+          <img src="Labs/lab01/tech-suricata.png" alt="Suricata IDS">
           <div class="modal-tech-name">Suricata IDS</div>
           <div class="modal-tech-desc">Sistema de detección de intrusos configurado con reglas personalizadas para detectar escaneos, fuerza bruta y anomalías de tráfico.</div>
         </div>
 
         <div class="modal-tech-card">
-          <img src="Labs/lab01/tech-wazuh.jpg" alt="Wazuh SIEM">
+          <img src="Labs/lab01/tech-wazuh.png" alt="Wazuh SIEM">
           <div class="modal-tech-name">Wazuh SIEM</div>
           <div class="modal-tech-desc">Plataforma central que recibe, correlaciona y visualiza todos los eventos de seguridad del laboratorio.</div>
         </div>
 
         <div class="modal-tech-card">
-          <img src="Labs/lab01/tech-iptables.jpg" alt="iptables">
+          <img src="Labs/lab01/tech-iptables.png" alt="iptables">
           <div class="modal-tech-name">iptables</div>
           <div class="modal-tech-desc">Firewall basado en reglas que ejecuta el bloqueo automático de IPs atacantes a partir de los logs del IDS.</div>
         </div>
 
         <div class="modal-tech-card">
-          <img src="Labs/lab01/tech-python.jpg" alt="Python">
+          <img src="Labs/lab01/tech-python.jpeg" alt="Python">
           <div class="modal-tech-name">Python + Bash</div>
           <div class="modal-tech-desc">Scripts de automatización que extraen IPs del log de Suricata y ejecutan el bloqueo via iptables. Programados con crontab.</div>
         </div>
 
         <div class="modal-tech-card">
           <img src="Labs/lab01/tech-kali.jpg" alt="Kali Linux">
-          <div class="modal-tech-name">Kali Linux</div>
+          <img src="Labs/lab01/tech-kali.jpeg" alt="Kali Linux">
           <div class="modal-tech-desc">Máquina atacante usada para validar el sistema con Metasploit, Hydra y Nmap simulando ataques reales.</div>
         </div>
 
