@@ -226,6 +226,12 @@ footer span{color:var(--green);}
   .modal-box{margin:0;}
   .gallery-grid{grid-template-columns:repeat(2,1fr);}
 }
+
+/* ─── TEXTO JUSTIFICADO GLOBAL ─────────────────────────────── */
+p, li, .modal-desc, .lab-desc, .hero-desc, .tl-desc, .exp-list li,
+.sobre-text p, .modal-tech-desc, .skill-note, .hero-quote {
+  text-align: justify;
+}
 </style>
 </head>
 <body>
@@ -321,7 +327,7 @@ footer span{color:var(--green);}
         <div class="lab-body">
           <div class="lab-status">// LAB 01 · COMPLETADO · TFG ASIR</div>
           <div class="lab-title">Sistema de Detección, Monitorización y Prevención de Intrusos</div>
-          <div class="lab-desc">Infraestructura defensiva completa sobre 4 máquinas virtuales: honeypot como señuelo, IDS detectando ataques, SIEM centralizando alertas y bloqueo automático de IPs con Python. Validado con ataques reales usando Kali Linux.</div>
+          <div class="lab-desc">Monté este sistema como TFG: honeypot como señuelo, Suricata analizando el tráfico, Wazuh centralizando los eventos y bloqueo automático de IPs con scripts propios en Python. Todo validado con ataques reales de fuerza bruta desde Kali Linux.</div>
           <div class="lab-tags">
             <span class="lab-tag">Honeypot Chameleon</span>
             <span class="lab-tag">Suricata IDS/IPS</span>
@@ -353,52 +359,54 @@ footer span{color:var(--green);}
     <div class="modal-section">
       <div class="modal-section-label">// Introducción</div>
       <img src="Labs/lab01/portada.jpeg" alt="Arquitectura del laboratorio" class="modal-portada">
-      <p class="modal-desc">Diseñé e implementé este laboratorio como Proyecto Final de Grado. Cuatro máquinas virtuales interconectadas forman una infraestructura defensiva completa: el honeypot Chameleon actúa como señuelo sobre servicios simulados, Suricata detecta escaneos, intentos de fuerza bruta y anomalías con reglas ajustadas durante las pruebas, y Wazuh centraliza y correlaciona todos los eventos de seguridad. Un script Python automatiza la respuesta bloqueando IPs via iptables, reduciendo la intervención manual. Todo validado con ataques reales usando Kali Linux, Metasploit e Hydra, mapeando los TTPs al framework MITRE ATT&CK.</p>
+      <p class="modal-desc">Este fue mi Proyecto Final de Grado, y la idea era clara: montar un sistema de seguridad real, funcional y sin coste de software, que pudiera aplicarse en una pequeña empresa.</p>
+      <p class="modal-desc">Cuatro máquinas virtuales en VirtualBox, cada una con su rol: el Honeypot Chameleon hace de señuelo exponiendo servicios como SSH, FTP o HTTP para atraer al atacante, Suricata escucha todo el tráfico de la red y lanza alertas con reglas que fui ajustando durante las pruebas, Wazuh recoge y correlaciona todos esos eventos dándome una visión centralizada de lo que pasa, y un firewall con iptables que bloquea automáticamente las IPs maliciosas gracias a unos scripts en Python y Bash que programé para que se ejecuten solos cada pocos minutos.</p>
+      <p class="modal-desc">Para validarlo, lancé ataques reales desde Kali Linux: fuerza bruta sobre SSH con Metasploit y sobre FTP con Hydra. El sistema lo detectó, lo registró y lo bloqueó. Los resultados los analicé y mapeé al framework MITRE ATT&CK.</p>
     </div>
 
     <!-- TECNOLOGÍAS — onclick en la card exterior, sin divs anidados -->
-    <div class="modal-section">
-      <div class="modal-section-label">// Tecnologías Utilizadas</div>
-      <div class="modal-tech-grid">
+<div class="modal-section">
+  <div class="modal-section-label">// Tecnologías Utilizadas</div>
+  <div class="modal-tech-grid">
 
-        <div class="modal-tech-card" onclick="openLightbox('Labs/lab01/tech-chameleon.jpeg','Honeypot Chameleon')">
-          <img src="Labs/lab01/tech-chameleon.jpeg" alt="Honeypot Chameleon">
-          <div class="modal-tech-name">Honeypot Chameleon</div>
-          <div class="modal-tech-desc">Señuelo desplegado sobre servicios simulados SSH y FTP para atraer y registrar intentos de intrusión.</div>
-        </div>
-
-        <div class="modal-tech-card" onclick="openLightbox('Labs/lab01/tech-suricata.png','Suricata IDS')">
-          <img src="Labs/lab01/tech-suricata.png" alt="Suricata IDS">
-          <div class="modal-tech-name">Suricata IDS</div>
-          <div class="modal-tech-desc">Sistema de detección de intrusos configurado con reglas personalizadas para detectar escaneos, fuerza bruta y anomalías de tráfico.</div>
-        </div>
-
-        <div class="modal-tech-card" onclick="openLightbox('Labs/lab01/tech-wazuh.png','Wazuh SIEM')">
-          <img src="Labs/lab01/tech-wazuh.png" alt="Wazuh SIEM">
-          <div class="modal-tech-name">Wazuh SIEM</div>
-          <div class="modal-tech-desc">Plataforma central que recibe, correlaciona y visualiza todos los eventos de seguridad del laboratorio.</div>
-        </div>
-
-        <div class="modal-tech-card" onclick="openLightbox('Labs/lab01/tech-iptables.png','iptables')">
-          <img src="Labs/lab01/tech-iptables.png" alt="iptables">
-          <div class="modal-tech-name">iptables</div>
-          <div class="modal-tech-desc">Firewall basado en reglas que ejecuta el bloqueo automático de IPs atacantes a partir de los logs del IDS.</div>
-        </div>
-
-        <div class="modal-tech-card" onclick="openLightbox('Labs/lab01/tech-python.jpeg','Python + Bash')">
-          <img src="Labs/lab01/tech-python.jpeg" alt="Python + Bash">
-          <div class="modal-tech-name">Python + Bash</div>
-          <div class="modal-tech-desc">Scripts de automatización que extraen IPs del log de Suricata y ejecutan el bloqueo via iptables. Programados con crontab.</div>
-        </div>
-
-        <div class="modal-tech-card" onclick="openLightbox('Labs/lab01/tech-kali.jpeg','Kali Linux')">
-          <img src="Labs/lab01/tech-kali.jpeg" alt="Kali Linux">
-          <div class="modal-tech-name">Kali Linux</div>
-          <div class="modal-tech-desc">Máquina atacante usada para validar el sistema con Metasploit, Hydra y Nmap simulando ataques reales.</div>
-        </div>
-
-      </div>
+    <div class="modal-tech-card" onclick="openLightbox('Labs/lab01/tech-chameleon.jpeg','Honeypot Chameleon')">
+      <img src="Labs/lab01/tech-chameleon.jpeg" alt="Honeypot Chameleon">
+      <div class="modal-tech-name">🪤 Honeypot Chameleon</div>
+      <div class="modal-tech-desc">Un honeypot es un sistema trampa diseñado para atraer a los atacantes y obtener información sobre sus métodos. Chameleon es una solución de código abierto y baja interacción que simula servicios y vulnerabilidades típicas de un sistema real, sin ejecutar ningún servicio real por detrás. Su objetivo no es defenderse, sino registrar todo lo que el atacante hace: qué servicios ataca, qué credenciales prueba, desde qué IP llega y cuándo. Esa información es la que luego permite tomar decisiones de seguridad reales.</div>
     </div>
+
+    <div class="modal-tech-card" onclick="openLightbox('Labs/lab01/tech-suricata.png','Suricata IDS')">
+      <img src="Labs/lab01/tech-suricata.png" alt="Suricata IDS">
+      <div class="modal-tech-name">🔍 Suricata IDS/IPS</div>
+      <div class="modal-tech-desc">Suricata es un sistema de detección de intrusos de código abierto que intercepta los paquetes que viajan por la red y los compara contra una base de reglas actualizada. Cuando detecta actividad sospechosa, una violación de política o un acceso no autorizado, genera una alerta inmediata. Puede funcionar en modo pasivo, solo detectando y registrando, o en modo activo bloqueando el tráfico automáticamente. Cuanto antes se detecta una intrusión, menores son los daños que puede causar.</div>
+    </div>
+
+    <div class="modal-tech-card" onclick="openLightbox('Labs/lab01/tech-wazuh.png','Wazuh SIEM')">
+      <img src="Labs/lab01/tech-wazuh.png" alt="Wazuh SIEM">
+      <div class="modal-tech-name">📊 Wazuh SIEM</div>
+      <div class="modal-tech-desc">Un SIEM recopila y correlaciona eventos de múltiples fuentes al mismo tiempo: servidores, dispositivos de red, aplicaciones. Wazuh hace exactamente eso, recoge la información de todos los agentes que tiene desplegados y la analiza de forma centralizada. Al no depender de una sola fuente reduce los falsos positivos, genera sus propias alertas y permite visualizar todo desde un panel de control. También almacena el histórico de eventos, lo que permite analizar qué pasó antes, durante y después de una intrusión.</div>
+    </div>
+
+    <div class="modal-tech-card" onclick="openLightbox('Labs/lab01/tech-iptables.png','iptables')">
+      <img src="Labs/lab01/tech-iptables.png" alt="iptables">
+      <div class="modal-tech-name">🔥 iptables</div>
+      <div class="modal-tech-desc">iptables es un firewall basado en reglas integrado en Linux que filtra todo el tráfico entrante y saliente de la red. Permite crear reglas para bloquear o permitir conexiones según la IP de origen, el puerto o el protocolo. A diferencia de un IDS que solo detecta, el firewall actúa directamente sobre el tráfico, siendo la última barrera que impide que el atacante llegue a los sistemas reales.</div>
+    </div>
+
+    <div class="modal-tech-card" onclick="openLightbox('Labs/lab01/tech-python.jpeg','Python + Bash')">
+      <img src="Labs/lab01/tech-python.jpeg" alt="Python + Bash">
+      <div class="modal-tech-name">🐍 Python + Bash</div>
+      <div class="modal-tech-desc">Python es un lenguaje de programación de código abierto, multiplataforma y muy legible, especialmente útil para automatizar tareas repetitivas y procesar ficheros de texto. Bash es el lenguaje de scripting nativo de Linux, ideal para ejecutar comandos del sistema de forma encadenada. Combinados permiten crear flujos de trabajo automatizados que se ejecutan solos sin intervención manual, reduciendo el tiempo de respuesta ante cualquier amenaza detectada.</div>
+    </div>
+
+    <div class="modal-tech-card" onclick="openLightbox('Labs/lab01/tech-kali.jpeg','Kali Linux')">
+      <img src="Labs/lab01/tech-kali.jpeg" alt="Kali Linux">
+      <div class="modal-tech-name">☠️ Kali Linux</div>
+      <div class="modal-tech-desc">Kali Linux es un sistema operativo basado en Debian diseñado específicamente para la seguridad ofensiva. Incluye más de 600 herramientas orientadas a pruebas de penetración, análisis de vulnerabilidades, ataques de contraseñas, análisis forense e ingeniería inversa. Es el estándar en el sector para simular ataques reales y comprobar si los sistemas defensivos funcionan correctamente.</div>
+    </div>
+
+  </div>
+</div>
 
     <!-- VÍDEO 1 — INSTALACIÓN -->
     <div class="modal-section">
