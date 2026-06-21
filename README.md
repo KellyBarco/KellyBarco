@@ -1,27 +1,21 @@
 <div align="center">
-  <img src="banner.svg" alt="Kelly Barco — Técnica Superior ASIR · Ciberseguridad Defensiva" width="100%"/>
-</div>
 
-<br/>
-
-<div align="center">
-
-<a href="https://www.linkedin.com/in/kelly-b-44963826a">
-  <img src="https://img.shields.io/badge/LinkedIn-Kelly_Barco-0077B5?style=flat-square&logo=linkedin&logoColor=white"/>
-</a>
-<a href="mailto:keyubadu@gmail.com">
-  <img src="https://img.shields.io/badge/Email-Contactar-D14836?style=flat-square&logo=gmail&logoColor=white"/>
-</a>
-<a href="https://kellybarco.github.io/KellyBarco/">
-  <img src="https://img.shields.io/badge/Portfolio-Ver_web-00cc6a?style=flat-square&logo=githubpages&logoColor=white"/>
-</a>
-<img src="https://img.shields.io/badge/Estado-Open_to_Work-00e5ff?style=flat-square&labelColor=0a0e1a"/>
+```
+╔══════════════════════════════════════════════════════════════════╗
+║  > whoami                                                        ║
+║  kelly_barco // asir_ciberseguridad // bizkaia // open_to_work   ║
+╚══════════════════════════════════════════════════════════════════╝
+```
 
 </div>
+
+<h1>Hola, soy Kelly Barco 👋</h1>
+<h3>Técnica Superior ASIR · Sistemas, Redes y Ciberseguridad Defensiva</h3>
+<p>📍 Bizkaia, España · Presencial o remoto</p>
 
 ---
 
-Graduada en ASIR con perfil en **ciberseguridad defensiva**. Me gusta montar infraestructuras, analizar tráfico y dejar todo documentado para que sea replicable.
+Graduada en ASIR con perfil en ciberseguridad. Me gusta montar infraestructuras, analizar tráfico y dejar todo documentado para que sea replicable.
 
 Busco mi primera oportunidad en sistemas, soporte o infraestructura — con la idea clara de crecer hacia el Blue Team.
 
@@ -84,3 +78,4 @@ Busco mi primera oportunidad en sistemas, soporte o infraestructura — con la i
 <a href="https://kellybarco.github.io/KellyBarco/">
   <img src="https://img.shields.io/badge/Portfolio-Ver_web-00cc6a?style=flat-square&logo=githubpages&logoColor=white"/>
 </a>
+<img src="https://img.shields.io/badge/Estado-Open_to_Work-00cc6a?style=flat-square"/>
