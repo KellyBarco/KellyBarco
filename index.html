@@ -104,6 +104,8 @@ h1{font-family:var(--sans);font-size:clamp(2.4rem,7vw,5rem);font-weight:700;line
 .lab-link.pdf:hover{border-color:var(--green);background:rgba(0,255,136,.05);}
 .lab-link.media{color:var(--yellow);border-color:rgba(255,214,0,.3);margin-left:auto;}
 .lab-link.media:hover{border-color:var(--yellow);background:rgba(255,214,0,.05);}
+.lab-link:disabled{opacity:.4;cursor:not-allowed;}
+.lab-link:disabled:hover{border-color:var(--border);background:none;}
 
 /* ─── MODAL ─────────────────────────────────────────────────── */
 .modal-overlay{display:none;position:fixed;inset:0;z-index:2000;background:rgba(4,8,12,.93);backdrop-filter:blur(8px);overflow-y:auto;padding:2rem 1rem;align-items:flex-start;justify-content:center;}
@@ -319,10 +321,9 @@ p, li, .modal-desc, .lab-desc, .hero-desc, .tl-desc, .exp-list li,
       <button class="filter-btn" data-filter="ciberseguridad">Ciberseguridad</button>
       <button class="filter-btn" data-filter="sistemas">Sistemas</button>
       <button class="filter-btn" data-filter="redes">Redes</button>
-      <button class="filter-btn" data-filter="scripting">Scripting</button>
     </div>
     <div class="labs-grid" id="labsGrid">
-      <div class="lab-card fade-in" data-cats="ciberseguridad redes scripting sistemas">
+      <div class="lab-card fade-in" data-cats="ciberseguridad">
         <img class="lab-cover" src="Labs/lab01/portada_principal.png" alt="Lab 01 IDS/SIEM">
         <div class="lab-body">
           <div class="lab-status">// LAB 01 · COMPLETADO · TFG ASIR</div>
@@ -341,11 +342,29 @@ p, li, .modal-desc, .lab-desc, .hero-desc, .tl-desc, .exp-list li,
           </div>
         </div>
       </div>
+      <div class="lab-card fade-in wip" data-cats="sistemas">
+        <div class="lab-cover-placeholder">// EN CONSTRUCCIÓN</div>
+        <div class="lab-body">
+          <div class="lab-status">// LAB 02 · EN CONSTRUCCIÓN · NOVATECH SOLUTIONS</div>
+          <div class="lab-title">Administración de Sistemas Empresariales</div>
+          <!--
+          <div class="lab-desc">Despliegue completo de la infraestructura de una empresa ficticia desde cero: dominio Active Directory, integración Linux, servicios de archivos e impresión, contenedores Docker, base de datos con replicación, automatización con scripts y política de copias de seguridad con snapshots y RAID.</div>
+          <div class="lab-tags">
+            <span class="lab-tag yellow">Active Directory</span>
+            <span class="lab-tag yellow">Docker</span>
+            <span class="lab-tag yellow">MariaDB</span>
+            <span class="lab-tag yellow">PowerShell · Bash</span>
+            <span class="lab-tag yellow">Samba · NFS</span>
+          </div>
+          <div class="lab-links">
+          -->
+            <button class="lab-link" disabled>Próximamente</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
-
-<!-- ─── MODAL LAB 01 ──────────────────────────────────────────── -->
 <div class="modal-overlay" id="modal-lab01">
   <div class="modal-box">
     <button class="modal-close" onclick="closeModal('modal-lab01')">✕ cerrar</button>
@@ -714,7 +733,7 @@ p, li, .modal-desc, .lab-desc, .hero-desc, .tl-desc, .exp-list li,
             <span class="contact-link-icon">⌥</span><span>github.com/KellyBarco</span>
           </a>
           <a href="mailto:keyubadu@gmail.com" class="contact-link">
-            <span class="contact-link-icon">@</span><span>keyubadu@gmail.com</span>
+            <span class="contact-link-icon">@</span><span>Enviar correo</span>
           </a>
         </div>
       </div>
