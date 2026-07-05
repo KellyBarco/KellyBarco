@@ -377,7 +377,7 @@ p, li, .modal-desc, .lab-desc, .hero-desc, .tl-desc, .exp-list li,
     <!-- INTRODUCCIÓN -->
     <div class="modal-section">
       <div class="modal-section-label">// Introducción</div>
-      <img src="Labs/lab01/portada.jpeg" alt="Arquitectura del laboratorio" class="modal-portada">
+      <img src="Labs/lab01/portada.png" alt="Arquitectura del laboratorio" class="modal-portada">
       <p class="modal-desc">Este fue mi Proyecto Final de Grado, y la idea era clara: montar un sistema de seguridad real, funcional y sin coste de software, que pudiera aplicarse en una pequeña empresa.</p>
       <p class="modal-desc">Cuatro máquinas virtuales en VirtualBox, cada una con su rol: el Honeypot Chameleon hace de señuelo exponiendo servicios como SSH, FTP o HTTP para atraer al atacante, Suricata escucha todo el tráfico de la red y lanza alertas con reglas que fui ajustando durante las pruebas, Wazuh recoge y correlaciona todos esos eventos dándome una visión centralizada de lo que pasa, y un firewall con iptables que bloquea automáticamente las IPs maliciosas gracias a unos scripts en Python y Bash que programé para que se ejecuten solos cada pocos minutos.</p>
       <p class="modal-desc">Para validarlo, lancé ataques reales desde Kali Linux: fuerza bruta sobre SSH con Metasploit y sobre FTP con Hydra. El sistema lo detectó, lo registró y lo bloqueó. Los resultados los analicé y mapeé al framework MITRE ATT&CK.</p>
