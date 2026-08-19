@@ -164,16 +164,14 @@ h1{font-family:var(--sans);font-size:clamp(2.4rem,7vw,5rem);font-weight:700;line
 .skill-cat{background:var(--bg2);border:1px solid var(--border);padding:1.3rem;}
 .skill-cat-title{font-family:var(--mono);font-size:.64rem;color:var(--green);letter-spacing:.18em;text-transform:uppercase;margin-bottom:1rem;padding-bottom:.65rem;border-bottom:1px solid var(--border);}
 .skill-cat-note{font-family:var(--mono);font-size:.58rem;color:var(--muted);line-height:1.5;margin-bottom:1rem;margin-top:-.4rem;font-style:italic;}
-.skill-row{display:flex;flex-direction:column;gap:.28rem;margin-bottom:.85rem;}
-.skill-row:last-child{margin-bottom:0;}
-.skill-pct{display:none;}
-.skill-name{font-size:.86rem;font-weight:600;color:var(--text);}
-.skill-bar-wrap{width:100%;height:2px;background:var(--border);}
-.skill-bar{height:100%;background:linear-gradient(90deg,var(--green),var(--cyan));transition:width 1.5s cubic-bezier(.4,0,.2,1);}
-.skill-note{font-family:var(--mono);font-size:.58rem;color:var(--muted);line-height:1.45;font-style:italic;}
+.skill-list{list-style:none;display:flex;flex-direction:column;gap:.75rem;}
+.skill-list li{padding-left:1rem;position:relative;}
+.skill-list li::before{content:'▸';color:var(--green);position:absolute;left:0;top:.05rem;font-size:.7rem;}
+.skill-name{display:block;font-size:.86rem;font-weight:600;color:var(--text);margin-bottom:.15rem;}
+.skill-note{display:block;font-family:var(--mono);font-size:.58rem;color:var(--muted);line-height:1.45;font-style:italic;}
 
-/* ─── FORMACIÓN ───────────────────────────────────────────── */
-#formacion{padding:6rem 0;border-top:1px solid var(--border);background:linear-gradient(180deg,transparent,rgba(0,255,136,.01),transparent);}
+/* ─── CERTIFICACIONES ────────────────────────────────────────── */
+#certificaciones{padding:6rem 0;border-top:1px solid var(--border);background:linear-gradient(180deg,transparent,rgba(0,255,136,.01),transparent);}
 .timeline{position:relative;padding-left:1.8rem;}
 .timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(180deg,var(--green),var(--muted));}
 .tl-item{position:relative;padding-bottom:2rem;}
@@ -213,13 +211,12 @@ footer span{color:var(--green);}
   h1{font-size:2.2rem;}
   .labs-grid{grid-template-columns:1fr;}
   .skills-grid{grid-template-columns:1fr;}
-  .exp-header{flex-direction:column;}
   .modal-box{margin:0;}
   .gallery-grid{grid-template-columns:repeat(2,1fr);}
 }
 
 /* ─── TEXTO JUSTIFICADO GLOBAL ─────────────────────────────── */
-p, li, .modal-desc, .lab-desc, .hero-desc, .tl-desc, .exp-list li,
+p, li, .modal-desc, .lab-desc, .hero-desc, .tl-desc,
 .sobre-text p, .modal-tech-desc, .skill-note, .hero-quote {
   text-align: justify;
 }
@@ -236,9 +233,8 @@ p, li, .modal-desc, .lab-desc, .hero-desc, .tl-desc, .exp-list li,
   <ul class="nav-links">
     <li><a href="#sobre">about</a></li>
     <li><a href="#labs">labs</a></li>
-    <li><a href="#experiencia">experiencia</a></li>
     <li><a href="#habilidades">skills</a></li>
-    <li><a href="#formacion">formación</a></li>
+    <li><a href="#certificaciones">certificaciones</a></li>
     <li><a href="#contacto">contacto</a></li>
   </ul>
 </nav>
@@ -279,7 +275,7 @@ p, li, .modal-desc, .lab-desc, .hero-desc, .tl-desc, .exp-list li,
     </div>
     <div class="sobre-grid">
       <div class="sobre-text fade-in">
-        <p>Mi relación con la informática nació de la <strong>curiosidad de entender cómo funcionan los sistemas por dentro.</strong> Antes de estudiar ya llevaba años formándome de manera autodidacta: montaba, formateaba y reparaba mis propios equipos, y me interesaba por cómo funcionaban los sistemas más allá del uso básico. Esa base práctica fue la que me llevó a decidir formarme de manera reglada en el sector. Decidí consolidar esa vocación titulándome como <strong>Técnica Superior en ASIR con perfil en ciberseguridad,</strong> completado con la certificación de <strong>Soporte de TI de Google.</strong></p>
+        <p>Mi relación con la informática nació de la <strong>curiosidad de entender cómo funcionan los sistemas por dentro.</strong> Antes de estudiar ya llevaba años formándome de manera autodidacta, montando, formateando y reparando mis propios equipos. Esa base práctica me llevó a formarme de manera reglada en el sector.</p>
         <p>Esa base se puso a prueba en mis prácticas en <strong>Normicro,</strong> donde migré un servidor Pandora FMS completo, con su base de datos, desde un sistema operativo Linux obsoleto que ya no se podía actualizar hacia uno más actual, <strong>sin pérdida de datos ni interrupción del servicio.</strong></p>
         <p>También evalué PRTG Network Monitor con SNMP y NetFlow, y Wireshark como herramienta complementaria, documentando la viabilidad de ambas para la empresa. Participé además en el diagnóstico de averías en sistemas y hardware junto a un técnico senior, y redacté las guías técnicas de cada proceso.</p>
         <p>Llevo más de diez años <strong>compaginando trabajo y formación,</strong> lo que me ha enseñado a organizarme, cumplir plazos y asumir responsabilidades por mi cuenta.</p>
@@ -374,7 +370,7 @@ p, li, .modal-desc, .lab-desc, .hero-desc, .tl-desc, .exp-list li,
       <p class="modal-desc">Para validarlo, lancé ataques reales desde Kali Linux: fuerza bruta sobre SSH con Metasploit y sobre FTP con Hydra. El sistema lo detectó, lo registró y lo bloqueó. Los resultados los analicé y mapeé al framework MITRE ATT&CK.</p>
     </div>
 
-    <!-- TECNOLOGÍAS — onclick en la card exterior, sin divs anidados -->
+    <!-- TECNOLOGÍAS -->
 <div class="modal-section">
   <div class="modal-section-label">// Tecnologías Utilizadas</div>
   <div class="modal-tech-grid">
@@ -489,7 +485,7 @@ p, li, .modal-desc, .lab-desc, .hero-desc, .tl-desc, .exp-list li,
 <section id="habilidades">
   <div class="container">
     <div class="section-header fade-in">
-      <span class="sec-num">04</span>
+      <span class="sec-num">03</span>
       <h2>Habilidades</h2>
       <div class="sec-line"></div>
     </div>
@@ -497,155 +493,75 @@ p, li, .modal-desc, .lab-desc, .hero-desc, .tl-desc, .exp-list li,
 
       <div class="skill-cat fade-in">
         <div class="skill-cat-title">// Sistemas y Virtualización</div>
-        <div class="skill-row">
-          <div class="skill-row-header"><span class="skill-name">Linux · Debian / Ubuntu / CentOS</span></div>
-          <div class="skill-bar-wrap"><div class="skill-bar" data-w="85" style="width:0"></div></div>
-          <span class="skill-note">Sistema principal en todos los labs y en Normicro</span>
-        </div>
-        <div class="skill-row">
-          <div class="skill-row-header"><span class="skill-name">VMware · VirtualBox</span></div>
-          <div class="skill-bar-wrap"><div class="skill-bar" data-w="82" style="width:0"></div></div>
-          <span class="skill-note">4 máquinas interconectadas en el TFG</span>
-        </div>
-        <div class="skill-row">
-          <div class="skill-row-header"><span class="skill-name">Diagnóstico y resolución de averías</span></div>
-          <div class="skill-bar-wrap"><div class="skill-bar" data-w="78" style="width:0"></div></div>
-          <span class="skill-note">Experiencia real en Normicro junto a técnico senior</span>
-        </div>
-        <div class="skill-row">
-          <div class="skill-row-header"><span class="skill-name">Windows Server · AD · GPO</span></div>
-          <div class="skill-bar-wrap"><div class="skill-bar" data-w="74" style="width:0"></div></div>
-          <span class="skill-note">Formación sólida con labs quincenales</span>
-        </div>
-        <div class="skill-row">
-          <div class="skill-row-header"><span class="skill-name">Alta disponibilidad · Clústeres</span></div>
-          <div class="skill-bar-wrap"><div class="skill-bar" data-w="65" style="width:0"></div></div>
-          <span class="skill-note">Formación de clase, sin proyecto propio todavía</span>
-        </div>
+        <ul class="skill-list">
+          <li><span class="skill-name">Linux · Debian / Ubuntu / CentOS</span></li>
+          <li><span class="skill-name">VMware · VirtualBox</span></li>
+          <li><span class="skill-name">Diagnóstico y resolución de averías</span></li>
+          <li><span class="skill-name">Windows Server · AD · GPO</span></li>
+          <li><span class="skill-name">Alta disponibilidad · Clústeres</span></li>
+        </ul>
       </div>
 
       <div class="skill-cat fade-in">
         <div class="skill-cat-title">// Redes y Protocolos</div>
-        <div class="skill-row">
-          <div class="skill-row-header"><span class="skill-name">TCP/IP · DNS · DHCP · SSH</span></div>
-          <div class="skill-bar-wrap"><div class="skill-bar" data-w="80" style="width:0"></div></div>
-          <span class="skill-note">Formación extensa y uso en labs y prácticas</span>
-        </div>
-        <div class="skill-row">
-          <div class="skill-row-header"><span class="skill-name">Firewall · iptables</span></div>
-          <div class="skill-bar-wrap"><div class="skill-bar" data-w="78" style="width:0"></div></div>
-          <span class="skill-note">Bloqueo automático de IPs en el TFG</span>
-        </div>
-        <div class="skill-row">
-          <div class="skill-row-header"><span class="skill-name">Wireshark · SNMP · NetFlow</span></div>
-          <div class="skill-bar-wrap"><div class="skill-bar" data-w="75" style="width:0"></div></div>
-          <span class="skill-note">Evaluación y despliegue real en Normicro</span>
-        </div>
-        <div class="skill-row">
-          <div class="skill-row-header"><span class="skill-name">FTP · HTTP/S</span></div>
-          <div class="skill-bar-wrap"><div class="skill-bar" data-w="70" style="width:0"></div></div>
-          <span class="skill-note">Labs de clase, uso más teórico</span>
-        </div>
+        <ul class="skill-list">
+          <li><span class="skill-name">TCP/IP · DNS · DHCP · SSH</span></li>
+          <li><span class="skill-name">Firewall · iptables</span></li>
+          <li><span class="skill-name">Wireshark · SNMP · NetFlow</span></li>
+          <li><span class="skill-name">FTP · HTTP/S</span></li>
+        </ul>
       </div>
 
       <div class="skill-cat fade-in">
         <div class="skill-cat-title">// Seguridad Defensiva</div>
-        <div class="skill-row">
-          <div class="skill-row-header"><span class="skill-name">Suricata (IDS)</span></div>
-          <div class="skill-bar-wrap"><div class="skill-bar" data-w="80" style="width:0"></div></div>
-          <span class="skill-note">Implementado de cero con reglas personalizadas en el TFG</span>
-        </div>
-        <div class="skill-row">
-          <div class="skill-row-header"><span class="skill-name">Wazuh (SIEM)</span></div>
-          <div class="skill-bar-wrap"><div class="skill-bar" data-w="78" style="width:0"></div></div>
-          <span class="skill-note">Desplegado e integrado con honeypot en el TFG</span>
-        </div>
-        <div class="skill-row">
-          <div class="skill-row-header"><span class="skill-name">Análisis de logs</span></div>
-          <div class="skill-bar-wrap"><div class="skill-bar" data-w="75" style="width:0"></div></div>
-          <span class="skill-note">Parte central del TFG y de los labs</span>
-        </div>
-        <div class="skill-row">
-          <div class="skill-row-header"><span class="skill-name">Honeypot · Chameleon</span></div>
-          <div class="skill-bar-wrap"><div class="skill-bar" data-w="74" style="width:0"></div></div>
-          <span class="skill-note">Implementado y documentado en el TFG</span>
-        </div>
-        <div class="skill-row">
-          <div class="skill-row-header"><span class="skill-name">Detección de amenazas · Incidentes</span></div>
-          <div class="skill-bar-wrap"><div class="skill-bar" data-w="72" style="width:0"></div></div>
-          <span class="skill-note">Validado con Kali, Metasploit e Hydra en el TFG</span>
-        </div>
-        <div class="skill-row">
-          <div class="skill-row-header"><span class="skill-name">Hardening básico</span></div>
-          <div class="skill-bar-wrap"><div class="skill-bar" data-w="70" style="width:0"></div></div>
-          <span class="skill-note">Formación y labs, en progreso en el Lab 02</span>
-        </div>
+        <ul class="skill-list">
+          <li><span class="skill-name">Suricata (IDS)</span></li>
+          <li><span class="skill-name">Wazuh (SIEM)</span></li>
+          <li><span class="skill-name">Análisis de logs</span></li>
+          <li><span class="skill-name">Honeypot · Chameleon</span></li>
+          <li><span class="skill-name">Detección de amenazas · Incidentes</span></li>
+          <li><span class="skill-name">Hardening básico</span></li>
+        </ul>
       </div>
 
       <div class="skill-cat fade-in">
         <div class="skill-cat-title">// Monitorización</div>
-        <div class="skill-row">
-          <div class="skill-row-header"><span class="skill-name">Pandora FMS</span></div>
-          <div class="skill-bar-wrap"><div class="skill-bar" data-w="75" style="width:0"></div></div>
-          <span class="skill-note">Migración completa en producción en Normicro</span>
-        </div>
-        <div class="skill-row">
-          <div class="skill-row-header"><span class="skill-name">PRTG Network Monitor</span></div>
-          <div class="skill-bar-wrap"><div class="skill-bar" data-w="73" style="width:0"></div></div>
-          <span class="skill-note">Despliegue real con SNMP y NetFlow en Normicro</span>
-        </div>
+        <ul class="skill-list">
+          <li><span class="skill-name">Pandora FMS</span></li>
+          <li><span class="skill-name">PRTG Network Monitor</span></li>
+        </ul>
       </div>
 
       <div class="skill-cat fade-in">
         <div class="skill-cat-title">// Scripting y Automatización</div>
-        <div class="skill-row">
-          <div class="skill-row-header"><span class="skill-name">Bash · Crontab</span></div>
-          <div class="skill-bar-wrap"><div class="skill-bar" data-w="74" style="width:0"></div></div>
-          <span class="skill-note">Usado en el TFG y labs</span>
-        </div>
-        <div class="skill-row">
-          <div class="skill-row-header"><span class="skill-name">Python</span></div>
-          <div class="skill-bar-wrap"><div class="skill-bar" data-w="68" style="width:0"></div></div>
-          <span class="skill-note">Scripts de automatización reales, perfil no principal</span>
-        </div>
-        <div class="skill-row">
-          <div class="skill-row-header"><span class="skill-name">SQL</span></div>
-          <div class="skill-bar-wrap"><div class="skill-bar" data-w="66" style="width:0"></div></div>
-          <span class="skill-note">Labs de clase y módulo de BBDD en ASIR</span>
-        </div>
+        <ul class="skill-list">
+          <li><span class="skill-name">Bash · Crontab</span></li>
+          <li><span class="skill-name">Python</span></li>
+          <li><span class="skill-name">SQL</span></li>
+        </ul>
       </div>
 
       <div class="skill-cat fade-in">
         <div class="skill-cat-title">// Documentación Técnica</div>
         <div class="skill-cat-note">Uno de los puntos más fuertes y diferenciadores del perfil</div>
-        <div class="skill-row">
-          <div class="skill-row-header"><span class="skill-name">Redacción de guías técnicas</span></div>
-          <div class="skill-bar-wrap"><div class="skill-bar" data-w="88" style="width:0"></div></div>
-          <span class="skill-note">Entregas reales en Normicro y memoria completa del TFG</span>
-        </div>
+        <ul class="skill-list">
+          <li><span class="skill-name">Redacción de guías técnicas</span></li>
+        </ul>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- ─── FORMACIÓN ─────────────────────────────────────────────── -->
-<section id="formacion">
+<!-- ─── CERTIFICACIONES ─────────────────────────────────────────────── -->
+<section id="certificaciones">
   <div class="container">
     <div class="section-header fade-in">
-      <span class="sec-num">05</span>
-      <h2>Formación</h2>
+      <span class="sec-num">04</span>
+      <h2>Certificaciones</h2>
       <div class="sec-line"></div>
     </div>
     <div class="timeline">
-
-      <div class="tl-item fade-in">
-        <div class="tl-date">Septiembre 2020 — Julio 2023</div>
-        <div class="tl-title">Técnica Superior en Administración de Sistemas Informáticos en Red — Perfil en Ciberseguridad</div>
-        <div class="tl-org">STUCOM Centre d'Estudis / Linkia FP · Barcelona / Online</div>
-        <div class="tl-desc">Módulos principales: Seguridad y Hacking Ético · Seguridad en Sistemas, Redes y Servicios · Administración de SO · Planificación y Administración de Redes · Cortafuegos y Proxies · Alta Disponibilidad · Gestión de BBDD · Implantación de Aplicaciones Web.<br><br>Laboratorios prácticos de entrega quincenal: Active Directory y GPO · Copias de seguridad y recuperación · Cortafuegos y proxies · Alta disponibilidad y clústeres · Servicios de red (DNS, DHCP, FTP, HTTP/S, correo) · BBDD con SQL.</div>
-      </div>
-
       <div class="tl-item fade-in">
         <div class="tl-date">2022</div>
         <div class="tl-title">
@@ -654,7 +570,7 @@ p, li, .modal-desc, .lab-desc, .hero-desc, .tl-desc, .exp-list li,
         </div>
         <div class="tl-org">Coursera / Google</div>
         <div class="tl-desc">Certificación de 6 cursos sobre fundamentos de redes TCP/IP, sistemas operativos (Linux y Windows), seguridad informática básica y resolución metódica de incidencias en IT.</div>
-      </div>   
+      </div>
     </div>
   </div>
 </section>
@@ -663,7 +579,7 @@ p, li, .modal-desc, .lab-desc, .hero-desc, .tl-desc, .exp-list li,
 <section id="contacto">
   <div class="container">
     <div class="section-header fade-in">
-      <span class="sec-num">06</span>
+      <span class="sec-num">05</span>
       <h2>Contacto</h2>
       <div class="sec-line"></div>
     </div>
@@ -728,15 +644,6 @@ const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.1 });
 document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
-
-const barObs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if(e.isIntersecting)
-      e.target.querySelectorAll('.skill-bar')
-              .forEach(b => { b.style.width = b.dataset.w + '%'; });
-  });
-}, { threshold: 0.25 });
-document.querySelectorAll('.skill-cat').forEach(el => barObs.observe(el));
 
 document.querySelectorAll('.filter-btn').forEach(btn => {
   btn.addEventListener('click', () => {
