@@ -158,17 +158,6 @@ h1{font-family:var(--sans);font-size:clamp(2.4rem,7vw,5rem);font-weight:700;line
 .modal-tech-desc{font-size:.85rem;color:var(--text);line-height:1.65;font-weight:400;}
 @media(max-width:600px){.modal-tech-grid{grid-template-columns:1fr;}}
 
-/* ─── EXPERIENCIA ─────────────────────────────────────────── */
-#experiencia{padding:6rem 0;border-top:1px solid var(--border);}
-.exp-card{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--cyan);padding:2rem;margin-bottom:1.2rem;}
-.exp-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;flex-wrap:wrap;gap:.5rem;}
-.exp-role{font-size:1.1rem;font-weight:700;color:#fff;}
-.exp-date{font-family:var(--mono);font-size:.65rem;color:var(--cyan);letter-spacing:.12em;}
-.exp-company{font-size:.9rem;color:var(--cyan);margin-bottom:.9rem;}
-.exp-list{list-style:none;display:flex;flex-direction:column;gap:.55rem;}
-.exp-list li{font-size:.9rem;color:var(--text);font-weight:300;line-height:1.7;display:flex;align-items:flex-start;gap:.6rem;}
-.exp-list li::before{content:'▸';color:var(--green);font-size:.7rem;flex-shrink:0;margin-top:.25rem;}
-
 /* ─── HABILIDADES ─────────────────────────────────────────── */
 #habilidades{padding:6rem 0;border-top:1px solid var(--border);}
 .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;}
@@ -496,32 +485,6 @@ p, li, .modal-desc, .lab-desc, .hero-desc, .tl-desc, .exp-list li,
   <img id="lightboxImg" src="" alt="">
 </div>
 
-<!-- ─── EXPERIENCIA ───────────────────────────────────────────── -->
-<section id="experiencia">
-  <div class="container">
-    <div class="section-header fade-in">
-      <span class="sec-num">03</span>
-      <h2>Experiencia</h2>
-      <div class="sec-line"></div>
-    </div>
-    <div class="exp-card fade-in">
-      <div class="exp-header">
-        <div>
-          <div class="exp-role">Técnica de Sistemas y Monitorización · Prácticas ASIR (FCT)</div>
-          <div class="exp-company">Normicro S.L. · Leioa, Bizkaia</div>
-        </div>
-        <div class="exp-date">Mayo 2023 – Julio 2023</div>
-      </div>
-      <ul class="exp-list" style="gap:.3rem;">
-        <li>Migré el servidor Pandora FMS completo — sistema operativo y base de datos incluidos — manteniendo el servicio activo durante todo el proceso y sin pérdida de datos.</li>
-        <li>Desplegué PRTG Network Monitor con SNMP y NetFlow para monitorización de tráfico TCP/IP, y evalué Wireshark como herramienta complementaria, documentando la viabilidad de ambas para su implantación en la empresa.</li>
-        <li>Participé en el diagnóstico y resolución de averías en sistemas, hardware y entornos virtualizados, incluyendo intervenciones en cliente junto a técnico senior.</li>
-        <li>Redacté guías técnicas de instalación y configuración para que el equipo pudiera replicar cada proceso de forma autónoma.</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
 <!-- ─── HABILIDADES ───────────────────────────────────────────── -->
 <section id="habilidades">
   <div class="container">
@@ -691,26 +654,7 @@ p, li, .modal-desc, .lab-desc, .hero-desc, .tl-desc, .exp-list li,
         </div>
         <div class="tl-org">Coursera / Google</div>
         <div class="tl-desc">Certificación de 6 cursos sobre fundamentos de redes TCP/IP, sistemas operativos (Linux y Windows), seguridad informática básica y resolución metódica de incidencias en IT.</div>
-      </div>
-
-      <div class="tl-item fade-in" style="padding-bottom:1.2rem;">
-        <div style="font-family:var(--mono);font-size:.64rem;color:var(--green);letter-spacing:.18em;text-transform:uppercase;padding:.5rem 0;border-top:1px solid var(--border);margin-top:.4rem;">// Formación Complementaria</div>
-      </div>
-
-      <div class="tl-item fade-in">
-        <div class="tl-date">2011</div>
-        <div class="tl-title">Curso de Webmaster</div>
-        <div class="tl-org">Ceintec</div>
-        <div class="tl-desc">Fundamentos de HTML y estructura web. Primera toma de contacto con cómo funciona una web por dentro.</div>
-      </div>
-
-      <div class="tl-item fade-in">
-        <div class="tl-date">2011 — 2013</div>
-        <div class="tl-title">Diplomado en Cine, TV, Fotografía y Producción Audiovisual</div>
-        <div class="tl-org">Imval Estudios Audiovisuales</div>
-        <div class="tl-desc">Formación práctica en imagen, sonido, fotografía y edición profesional (Premiere, After Effects, Photoshop, Lightroom). Refuerza la capacidad de crear documentación visual y materiales técnicos cuidados.</div>
-      </div>
-
+      </div>   
     </div>
   </div>
 </section>
