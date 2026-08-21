@@ -128,6 +128,8 @@ h1{font-family:var(--sans);font-size:clamp(2.4rem,7vw,5rem);font-weight:700;line
 .modal-section-label{font-family:var(--mono);font-size:.6rem;color:var(--green);letter-spacing:.18em;text-transform:uppercase;margin-bottom:1rem;}
 .modal-portada{width:100%;aspect-ratio:16/9;object-fit:contain;display:block;margin-bottom:1.2rem;border:1px solid var(--border);background:var(--bg3);}
 .modal-video-caption{font-family:var(--mono);font-size:.68rem;color:var(--muted);margin-bottom:.75rem;line-height:1.5;}
+.modal-pending{padding:2rem 1.5rem;text-align:center;font-family:var(--mono);font-size:.72rem;color:var(--muted);letter-spacing:.1em;background:var(--bg3);border:1px dashed var(--border);}
+.modal-video-pending{aspect-ratio:16/9;background:var(--bg3);border:1px dashed var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.68rem;color:var(--muted);letter-spacing:.12em;}
 
 /* ─── TECH GRID ──────────────────────────────────────────── */
 .modal-tech-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;}
@@ -329,13 +331,14 @@ p, li, .modal-desc, .lab-desc, .hero-desc, .tl-desc,
             <span class="lab-tag yellow">VMware Workstation</span>
           </div>
           <div class="lab-links">
-            <button class="lab-link" disabled>Próximamente</button>
+            <button class="lab-link media" onclick="openModal('modal-lab02')">En construcción ▶</button>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+<!-- ─── MODAL LAB 01 ─────────────────────────────────────────── -->
 <div class="modal-overlay" id="modal-lab01">
   <div class="modal-box">
     <button class="modal-close" onclick="closeModal('modal-lab01')">✕ cerrar</button>
@@ -453,6 +456,71 @@ p, li, .modal-desc, .lab-desc, .hero-desc, .tl-desc,
         <span class="lab-tag">Hydra</span>
         <span class="lab-tag">MITRE ATT&amp;CK</span>
         <span class="lab-tag">VirtualBox</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ─── MODAL LAB 02 ─────────────────────────────────────────── -->
+<div class="modal-overlay" id="modal-lab02">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-lab02')">✕ cerrar</button>
+
+    <div class="modal-header">
+      <div class="modal-status">// LAB 02 · EN DESARROLLO · SIMULACIÓN EMPRESARIAL</div>
+      <div class="modal-title">Diseño e Implementación de Infraestructura Corporativa</div>
+    </div>
+
+    <!-- INTRODUCCIÓN -->
+    <div class="modal-section">
+      <div class="modal-section-label">// Introducción</div>
+      <div class="modal-pending">// PRÓXIMAMENTE</div>
+    </div>
+
+    <!-- TECNOLOGÍAS -->
+    <div class="modal-section">
+      <div class="modal-section-label">// Tecnologías Utilizadas</div>
+      <div class="modal-pending">// PRÓXIMAMENTE</div>
+    </div>
+
+    <!-- VÍDEO 1 — DIRECTORIO ACTIVO Y CLIENTES -->
+    <div class="modal-section">
+      <div class="modal-section-label">// Directorio Activo y Clientes</div>
+      <div class="modal-video-pending">// VÍDEO PRÓXIMAMENTE</div>
+    </div>
+
+    <!-- VÍDEO 2 — INTEGRACIÓN LINUX Y CONTENEDORES -->
+    <div class="modal-section">
+      <div class="modal-section-label">// Integración Linux y Contenedores</div>
+      <div class="modal-video-pending">// VÍDEO PRÓXIMAMENTE</div>
+    </div>
+
+    <!-- VÍDEO 3 — BASE DE DATOS Y AUTOMATIZACIÓN -->
+    <div class="modal-section">
+      <div class="modal-section-label">// Base de Datos y Automatización</div>
+      <div class="modal-video-pending">// VÍDEO PRÓXIMAMENTE</div>
+    </div>
+
+    <!-- VÍDEO 4 — ALTA DISPONIBILIDAD Y BACKUPS -->
+    <div class="modal-section">
+      <div class="modal-section-label">// Alta Disponibilidad y Backups</div>
+      <div class="modal-video-pending">// VÍDEO PRÓXIMAMENTE</div>
+    </div>
+
+    <!-- TAGS -->
+    <div class="modal-body">
+      <div class="modal-tags">
+        <span class="lab-tag yellow">Active Directory</span>
+        <span class="lab-tag yellow">DNS</span>
+        <span class="lab-tag yellow">DHCP</span>
+        <span class="lab-tag yellow">Docker</span>
+        <span class="lab-tag yellow">MariaDB</span>
+        <span class="lab-tag yellow">PowerShell</span>
+        <span class="lab-tag yellow">Bash</span>
+        <span class="lab-tag yellow">Samba/NFS</span>
+        <span class="lab-tag yellow">Kerberos</span>
+        <span class="lab-tag yellow">VMware Workstation</span>
       </div>
     </div>
 
@@ -587,6 +655,7 @@ p, li, .modal-desc, .lab-desc, .hero-desc, .tl-desc,
   </div>
 </section>
 
+<!-- ─── FOOTER ──────────────────────────────────────────────── -->
 <footer>
   <p>Desarrollado por <span>Kelly Barco</span> · ASIR Ciberseguridad · Bizkaia</p>
 </footer>
