@@ -4,7 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kelly Barco · Portfolio · ASIR Ciberseguridad</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
 <meta name="description" content="Portfolio de Kelly Barco, Técnica Superior en ASIR con perfil en Ciberseguridad Defensiva. Laboratorios de IDS, SIEM, Active Directory y más. Disponible en Bizkaia.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kelly Barco · Portfolio · ASIR Ciberseguridad">
+<meta property="og:description" content="Técnica Superior en ASIR con perfil en Ciberseguridad Defensiva. Laboratorios de IDS, SIEM, Active Directory y más.">
+<meta property="og:url" content="https://kellybarco.github.io/KellyBarco/">
+<meta property="og:image" content="https://kellybarco.github.io/KellyBarco/Labs/lab01/portada_principal.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kelly Barco · Portfolio · ASIR Ciberseguridad">
+<meta name="twitter:description" content="Técnica Superior en ASIR con perfil en Ciberseguridad Defensiva. Laboratorios de IDS, SIEM, Active Directory y más.">
+<meta name="twitter:image" content="https://kellybarco.github.io/KellyBarco/Labs/lab01/portada_principal.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <style>
@@ -18,9 +28,13 @@
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-body{background:var(--bg);color:var(--text);font-family:var(--sans);overflow-x:hidden;cursor:none;}
-.cursor{width:10px;height:10px;background:var(--green);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;box-shadow:0 0 10px var(--green),0 0 25px rgba(0,255,136,.3);}
-.cursor-trail{width:28px;height:28px;border:1px solid rgba(0,255,136,.3);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9998;transition:all .12s ease;}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);overflow-x:hidden;}
+.cursor{display:none;width:10px;height:10px;background:var(--green);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;box-shadow:0 0 10px var(--green),0 0 25px rgba(0,255,136,.3);}
+.cursor-trail{display:none;width:28px;height:28px;border:1px solid rgba(0,255,136,.3);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9998;transition:all .12s ease;}
+@media (hover:hover) and (pointer:fine){
+  body{cursor:none;}
+  .cursor,.cursor-trail{display:block;}
+}
 body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.07) 2px,rgba(0,0,0,.07) 4px);pointer-events:none;z-index:1000;}
 body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(0,255,136,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,136,.025) 1px,transparent 1px);background-size:50px 50px;pointer-events:none;z-index:0;}
 
@@ -33,6 +47,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;padding:.9rem 2rem;display:f
 .nav-links a:hover{color:var(--green);}
 .nav-links a::before{content:'> ';color:var(--green);opacity:0;transition:opacity .2s;}
 .nav-links a:hover::before{opacity:1;}
+.nav-toggle{display:none;background:none;border:1px solid var(--border);color:var(--green);font-family:var(--mono);font-size:1rem;padding:.35rem .6rem;cursor:pointer;}
+.nav-mobile{display:none;position:fixed;top:52px;left:0;right:0;background:rgba(6,10,15,.98);border-bottom:1px solid rgba(0,255,136,.18);z-index:899;flex-direction:column;padding:.5rem 0;}
+.nav-mobile.open{display:flex;}
+.nav-mobile a{font-family:var(--mono);font-size:.75rem;color:#8aaabb;text-decoration:none;letter-spacing:.12em;text-transform:uppercase;padding:.85rem 2rem;border-bottom:1px solid var(--border);}
+.nav-mobile a:hover{color:var(--green);}
 
 /* ─── LAYOUT ─────────────────────────────────────────────── */
 section{position:relative;z-index:1;}
@@ -80,7 +99,8 @@ h1{font-family:var(--sans);font-size:clamp(2.4rem,7vw,5rem);font-weight:700;line
 .filter-bar{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:2rem;}
 .filter-btn{font-family:var(--mono);font-size:.65rem;padding:.28rem .8rem;border:1px solid var(--border);color:var(--muted);background:transparent;cursor:pointer;letter-spacing:.1em;transition:all .2s;}
 .filter-btn:hover,.filter-btn.active{border-color:var(--green);color:var(--green);background:rgba(0,255,136,.05);}
-.labs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.4rem;}
+.labs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;max-width:900px;}
+@media(max-width:800px){.labs-grid{grid-template-columns:1fr;max-width:none;}}
 .lab-card{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--green);display:flex;flex-direction:column;transition:transform .2s,border-color .2s,box-shadow .2s;overflow:hidden;}
 .lab-card:hover{transform:translateY(-4px);border-color:rgba(0,255,136,.45);box-shadow:0 8px 32px rgba(0,255,136,.07);}
 .lab-card.wip{border-left-color:var(--yellow);}
@@ -151,6 +171,8 @@ h1{font-family:var(--sans);font-size:clamp(2.4rem,7vw,5rem);font-weight:700;line
 /* ─── HABILIDADES ─────────────────────────────────────────── */
 #habilidades{padding:6rem 0;border-top:1px solid var(--border);}
 .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;}
+.skills-grid .skill-cat:last-child{grid-column:2;}
+@media(max-width:900px){.skills-grid .skill-cat:last-child{grid-column:auto;}}
 .skill-cat{background:var(--bg2);border:1px solid var(--border);padding:1.3rem;}
 .skill-cat-title{font-family:var(--mono);font-size:.64rem;color:var(--green);letter-spacing:.18em;text-transform:uppercase;margin-bottom:1rem;padding-bottom:.65rem;border-bottom:1px solid var(--border);}
 .skill-cat-note{font-family:var(--mono);font-size:.58rem;color:var(--muted);line-height:1.5;margin-bottom:1rem;margin-top:-.4rem;font-style:italic;}
@@ -197,17 +219,14 @@ footer span{color:var(--green);}
   .container{padding:0 1.25rem;}
   .sobre-grid,.contacto-grid{grid-template-columns:1fr;gap:2rem;}
   .nav-links{display:none;}
+  .nav-toggle{display:block;}
   h1{font-size:2.2rem;}
   .labs-grid{grid-template-columns:1fr;}
   .skills-grid{grid-template-columns:1fr;}
   .modal-box{margin:0;}
 }
 
-/* ─── TEXTO JUSTIFICADO GLOBAL ─────────────────────────────── */
-p, li, .modal-desc, .lab-desc, .hero-desc, .tl-desc,
-.sobre-text p, .modal-tech-desc, .hero-quote {
-  text-align: justify;
-}
+
 </style>
 </head>
 <body>
@@ -225,7 +244,15 @@ p, li, .modal-desc, .lab-desc, .hero-desc, .tl-desc,
     <li><a href="#certificaciones">certificaciones</a></li>
     <li><a href="#contacto">contacto</a></li>
   </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
 </nav>
+<div class="nav-mobile" id="navMobile">
+  <a href="#sobre">about</a>
+  <a href="#labs">labs</a>
+  <a href="#habilidades">skills</a>
+  <a href="#certificaciones">certificaciones</a>
+  <a href="#contacto">contacto</a>
+</div>
 
 <!-- ─── HERO ─────────────────────────────────────────────────── -->
 <section id="hero">
@@ -551,6 +578,7 @@ p, li, .modal-desc, .lab-desc, .hero-desc, .tl-desc,
           <li><span class="skill-name">Diagnóstico y resolución de averías</span></li>
           <li><span class="skill-name">Windows Server · AD · GPO</span></li>
           <li><span class="skill-name">Alta disponibilidad · Clústeres</span></li>
+          <li><span class="skill-name">Pandora FMS · PRTG Network Monitor</span></li>
         </ul>
       </div>
 
@@ -573,14 +601,6 @@ p, li, .modal-desc, .lab-desc, .hero-desc, .tl-desc,
           <li><span class="skill-name">Honeypot · Chameleon</span></li>
           <li><span class="skill-name">Detección de amenazas · Incidentes</span></li>
           <li><span class="skill-name">Hardening básico</span></li>
-        </ul>
-      </div>
-
-      <div class="skill-cat fade-in">
-        <div class="skill-cat-title">// Monitorización</div>
-        <ul class="skill-list">
-          <li><span class="skill-name">Pandora FMS</span></li>
-          <li><span class="skill-name">PRTG Network Monitor</span></li>
         </ul>
       </div>
 
@@ -692,6 +712,21 @@ function type(){
   setTimeout(type, del ? 36 : 75);
 }
 type();
+
+const navToggle = document.getElementById('navToggle');
+const navMobile = document.getElementById('navMobile');
+navToggle.addEventListener('click', () => {
+  const isOpen = navMobile.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', isOpen);
+  navToggle.textContent = isOpen ? '✕' : '☰';
+});
+navMobile.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    navMobile.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', false);
+    navToggle.textContent = '☰';
+  });
+});
 
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
