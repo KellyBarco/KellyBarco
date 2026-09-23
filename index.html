@@ -196,7 +196,9 @@ h1{font-family:var(--sans);font-size:clamp(2.4rem,7vw,5rem);font-weight:700;line
 
 /* ─── CONTACTO ────────────────────────────────────────────── */
 #contacto{padding:6rem 0;border-top:1px solid var(--border);}
-.contacto-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start;}
+.contacto-grid{display:grid;grid-template-columns:1fr;max-width:640px;margin:0 auto;gap:3.5rem;align-items:start;text-align:center;}
+.contacto-grid .contact-links{align-items:center;}
+.contacto-grid .contact-link{justify-content:center;}
 .contacto-text h3{font-size:1.7rem;font-weight:700;color:#fff;margin-bottom:.9rem;line-height:1.2;}
 .contacto-text h3 span{color:var(--green);}
 .contacto-text p{color:var(--text);font-size:.97rem;line-height:1.8;font-weight:300;margin-bottom:1.6rem;}
@@ -217,7 +219,7 @@ footer span{color:var(--green);}
 @media(max-width:900px){.skills-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:768px){
   .container{padding:0 1.25rem;}
-  .sobre-grid,.contacto-grid{grid-template-columns:1fr;gap:2rem;}
+  .sobre-grid{grid-template-columns:1fr;gap:2rem;}
   .nav-links{display:none;}
   .nav-toggle{display:block;}
   h1{font-size:2.2rem;}
@@ -241,7 +243,7 @@ footer span{color:var(--green);}
     <li><a href="#sobre">about</a></li>
     <li><a href="#labs">labs</a></li>
     <li><a href="#habilidades">skills</a></li>
-    <li><a href="#certificaciones">certificaciones</a></li>
+    <li><a href="#certificaciones">formación</a></li>
     <li><a href="#contacto">contacto</a></li>
   </ul>
   <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
@@ -250,7 +252,7 @@ footer span{color:var(--green);}
   <a href="#sobre">about</a>
   <a href="#labs">labs</a>
   <a href="#habilidades">skills</a>
-  <a href="#certificaciones">certificaciones</a>
+  <a href="#certificaciones">formación</a>
   <a href="#contacto">contacto</a>
 </div>
 
@@ -626,15 +628,23 @@ footer span{color:var(--green);}
   </div>
 </section>
 
-<!-- ─── CERTIFICACIONES ─────────────────────────────────────────────── -->
+<!-- ─── FORMACIÓN Y CERTIFICACIONES ─────────────────────────────────────────────── -->
 <section id="certificaciones">
   <div class="container">
     <div class="section-header fade-in">
       <span class="sec-num">04</span>
-      <h2>Certificaciones</h2>
+      <h2>Formación y Certificaciones</h2>
       <div class="sec-line"></div>
     </div>
     <div class="timeline">
+      <div class="tl-item fade-in">
+        <div class="tl-date">2023</div>
+        <div class="tl-title">
+          Técnica Superior en Administración de Sistemas Informáticos en Red (ASIR)
+        </div>
+        <div class="tl-org">Stucom / Linkia FP</div>
+        <div class="tl-desc">Formación en administración de sistemas, redes e infraestructura, con especialización cursada en ciberseguridad (módulos de hacking ético y seguridad en sistemas, redes y servicios).</div>
+      </div>
       <div class="tl-item fade-in">
         <div class="tl-date">2022</div>
         <div class="tl-title">
@@ -659,7 +669,7 @@ footer span{color:var(--green);}
     <div class="contacto-grid">
       <div class="contacto-text fade-in">
         <h3>¿Hablamos sobre<br><span>una oportunidad?</span></h3>
-        <p>Disponible para entrevistas técnicas y procesos de selección en Bizkaia o en remoto. Si buscas a alguien metódica, con ganas y en quien confiar la estabilidad de tus sistemas, escríbeme.</p>
+        <p>Disponible para entrevistas y procesos de selección en Bizkaia o en remoto, con incorporación sujeta a preaviso en mi puesto actual. Si buscas a alguien metódica y con ganas de trabajar, escríbeme.</p>
         <div class="contact-links">
           <a href="https://www.linkedin.com/in/kelly-b-44963826a" class="contact-link" target="_blank">
             <span class="contact-link-icon">in</span><span>linkedin.com/in/kelly-b-44963826a</span>
